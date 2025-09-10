@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/common/NavBar";
-
+import Footer from "@/components/common/Footer";
 
 export const metadata: Metadata = {
   title: "Monarcho Events",
@@ -14,11 +14,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-     <html lang="en">
+    <html lang="en">
       <body className={`font-[Poppins] h-full w-full`}>
         <Navbar />
         <main className="min-h-screen px-4 sm:px-4">{children}</main>
-
+        <Footer />
       </body>
     </html>
   );
