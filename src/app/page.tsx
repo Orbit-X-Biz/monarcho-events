@@ -36,15 +36,15 @@ export default function Home() {
 
         {/* Text overlay */}
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
-          <h1 className="text-2xl font-semibold  text-white">
+          <h1 className="text-2xl sm:text-[45px] font-semibold  text-white">
             MONARCHO EVENTS
           </h1>
-          <h1 className="text-3xl font-semibold mt-2 lovers-quarrel-regular text-white">
+          <h1 className="text-3xl sm:text-6xl font-semibold mt-2 sm:mt-5 lovers-quarrel-regular text-white">
             “Where moments take flight”
           </h1>
           <Link
             href="/"
-            className="bg-[#926B48] mt-10 px-6 py-2 font-semibold text-xs text-white rounded-md cursor-pointer"
+            className="bg-[#926B48] mt-10 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer"
           >
             Book Now
           </Link>
