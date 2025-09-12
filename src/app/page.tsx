@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const sliderImages = ["/assets/slide1.JPG", "/assets/slide2.JPG"];
 
@@ -36,18 +37,44 @@ export default function Home() {
 
         {/* Text overlay */}
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
-          <h1 className="text-2xl sm:text-[45px] font-semibold  text-white">
-            MONARCHO EVENTS
-          </h1>
-          <h1 className="text-3xl sm:text-6xl font-semibold mt-2 sm:mt-5 lovers-quarrel-regular text-white">
-            “Where moments take flight”
-          </h1>
-          <Link
-            href="/"
-            className="bg-[#926B48] mt-10 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer"
-          >
-            Book Now
-          </Link>
+          <div className="text-center">
+            <motion.h1
+              className="text-2xl sm:text-[45px] font-semibold text-white"
+              initial={{ opacity: 0, x: -50 }} // fade in from left
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              MONARCHO EVENTS
+            </motion.h1>
+
+            <motion.h1
+              className="text-3xl sm:text-6xl font-semibold mt-2 sm:mt-5 lovers-quarrel-regular text-white"
+              initial={{ opacity: 0, x: 50 }} // fade in from right
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+            >
+              “Where moments take flight”
+            </motion.h1>
+          </div>
+          <div className="mt-10">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                delay: 1, // show after hero text
+              }}
+            >
+              <Link
+                href="/"
+                className="bg-[#926B48] mt-10 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+              >
+                Book Now
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </div>
     </>
