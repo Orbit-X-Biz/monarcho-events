@@ -79,9 +79,11 @@ export default function Home() {
       </div>
 
       {/* What we do content */}
-      <div className="mt-10 mx-8 text-center bg-[#D6C6B7] p-5">
-        <h1 className="font-bold text-2xl text-[#926B48] mb-4">What We Do</h1>
-        <p className="font-light text-sm text-[#926B48]">
+      <div className="mt-10 mb-8 mx-8 sm:mx-16 text-center bg-[#D6C6B7] p-5 sm:py-5 sm:px-16">
+        <h1 className="font-bold text-2xl sm:text-4xl text-[#926B48] mb-4">
+          What We Do
+        </h1>
+        <p className="font-light text-sm sm:text-xl text-[#926B48]">
           At Monarcho Events, we transform life’s most cherished moments into
           luxury experiences that you’ll treasure forever. As a premier event
           planning and destination management company, we specialize in creating
