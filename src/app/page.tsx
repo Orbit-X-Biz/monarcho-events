@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const sliderImages = ["/assets/slide1.JPG", "/assets/slide2.JPG"];
 
@@ -36,18 +37,172 @@ export default function Home() {
 
         {/* Text overlay */}
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
-          <h1 className="text-2xl sm:text-[45px] font-semibold  text-white">
-            MONARCHO EVENTS
-          </h1>
-          <h1 className="text-3xl sm:text-6xl font-semibold mt-2 sm:mt-5 lovers-quarrel-regular text-white">
-            “Where moments take flight”
-          </h1>
-          <Link
-            href="/"
-            className="bg-[#926B48] mt-10 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer"
-          >
-            Book Now
-          </Link>
+          <div className="text-center">
+            <motion.h1
+              className="text-2xl sm:text-[45px] font-semibold text-white"
+              initial={{ opacity: 0, x: -50 }} // fade in from left
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              MONARCHO EVENTS
+            </motion.h1>
+
+            <motion.h1
+              className="text-3xl sm:text-6xl font-semibold mt-2 sm:mt-5 lovers-quarrel-regular text-white"
+              initial={{ opacity: 0, x: 50 }} // fade in from right
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+            >
+              “Where moments take flight”
+            </motion.h1>
+          </div>
+          <div className="mt-10">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                delay: 1, // show after hero text
+              }}
+            >
+              <Link
+                href="/"
+                className="bg-[#926B48] mt-10 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+              >
+                Book Now
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* What we do content */}
+      <div className="mt-10 mb-8 mx-8 sm:mx-16 text-center bg-[#D6C6B7] p-5 sm:py-5 sm:px-16">
+        <h1 className="font-bold text-2xl sm:text-4xl text-[#926B48] mb-4">
+          What We Do
+        </h1>
+        <p className="font-light text-sm sm:text-xl text-[#926B48]">
+          At Monarcho Events, we transform life’s most cherished moments into
+          luxury experiences that you’ll treasure forever. As a premier event
+          planning and destination management company, we specialize in creating
+          elegant weddings, bespoke proposals, corporate gatherings, and grand
+          cultural celebrations. Our expert planners combine creativity,
+          precision, and a signature touch of royalty to ensure that every
+          detail is flawlessly executed and uniquely reflects your story.
+          Whether you’re dreaming of an intimate celebration or a large-scale
+          event, Monarcho Events brings sophistication, personalization, and
+          unforgettable memories to every occasion.
+        </p>
+      </div>
+
+      {/* Our services component */}
+      <div className="flex flex-col">
+        <h1 className="text-center mb-5 font-semibold text-[#926B48] text-2xl">
+          Our Services
+        </h1>
+
+        {/* Service cards */}
+        <div className="flex flex-col space-y-3">
+          {/* Service cards - Life Celebrations*/}
+          <div className="flex flex-col space-y-2  bg-[#E5E0DA]">
+            <div className="relative w-full h-[300px] sm:h-[500px]">
+              <Image
+                src="/assets/services-life.png"
+                alt="Life Services"
+                fill
+                style={{ objectFit: "cover" }}
+                quality={100}
+              />
+            </div>
+            <div className="flex flex-col space-y-4 text-center px-3">
+              <h1 className="font-normal mt-2 text-[#926B48] text-xl">
+                Life Celebrations
+              </h1>
+              <p className="font-normal text-sm text-center">
+                Celebrate life’s milestones in style with us. From weddings,
+                proposals, and engagements to anniversaries, birthdays, baby
+                showers, and bachelor/bachelorette parties, we bring your vision
+                to life with elegance and creativity. Whether you dream of a
+                luxury wedding, cultural tradition, boho-inspired setup, or a
+                custom theme, our team handles everything : venue, décor,
+                entertainment, and coordination; so you can enjoy unforgettable
+                moments stress-free.
+              </p>
+              <Link
+                href="/"
+                className="bg-[#926B48] self-center w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+              >
+                More Info
+              </Link>
+            </div>
+          </div>
+
+          {/* Service cards - Entertainment & Music Events*/}
+          <div className="flex flex-col space-y-2  bg-[#E5E0DA]">
+            <div className="relative w-full h-[300px] sm:h-[500px]">
+              <Image
+                src="/assets/services-music.png"
+                alt="Life Services"
+                fill
+                style={{ objectFit: "cover" }}
+                quality={100}
+              />
+            </div>
+            <div className="flex flex-col space-y-4 text-center px-3">
+              <h1 className="font-normal mt-2 text-[#926B48] text-xl">
+                Entertainment & Music Events
+              </h1>
+              <p className="font-normal text-sm text-center">
+                Turn up the energy with Monarcho Events’ music experiences. From
+                concerts and festivals to DJ nights and live performances, we
+                curate unforgettable events that bring people together through
+                sound and atmosphere. With expert stage design, sound
+                engineering, and artist bookings, our team ensures every show is
+                seamlessly produced and full of life, whether it’s an intimate
+                lounge vibe or a large-scale concert.
+              </p>
+              <Link
+                href="/"
+                className="bg-[#926B48] self-center w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+              >
+                More Info
+              </Link>
+            </div>
+          </div>
+
+          {/* Service cards - Cultural & Traditional Events*/}
+          <div className="flex flex-col space-y-2  bg-[#E5E0DA]">
+            <div className="relative w-full h-[300px] sm:h-[500px]">
+              <Image
+                src="/assets/services-cultural.png"
+                alt="Life Services"
+                fill
+                style={{ objectFit: "cover" }}
+                quality={100}
+              />
+            </div>
+            <div className="flex flex-col space-y-4 text-center px-3">
+              <h1 className="font-normal mt-2 text-[#926B48] text-xl">
+                Cultural & Traditional Events
+              </h1>
+              <p className="font-normal text-sm text-center">
+                Celebrate heritage with Monarcho Events’ cultural experiences.
+                From festivals and traditional performances to community
+                celebrations, we craft events that honor authenticity while
+                creating meaningful memories. Working with cultural artists and
+                community leaders, our shows bring together music, dance,
+                storytelling, and tradition in vibrant, unforgettable ways.
+              </p>
+              <Link
+                href="/"
+                className="bg-[#926B48] self-center w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+              >
+                More Info
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>

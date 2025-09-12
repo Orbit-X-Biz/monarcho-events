@@ -15,6 +15,7 @@ export default function Footer() {
           alt="Logo"
           width={120}
           height={120}
+          quality={100}
         />
 
         {/* Company Details */}
@@ -127,6 +128,7 @@ export default function Footer() {
                 alt="Logo"
                 width={120}
                 height={120}
+                quality={100}
               />
             </div>
             <div className="flex flex-col space-y-3 text-[#926B48]">

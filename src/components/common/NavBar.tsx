@@ -21,6 +21,7 @@ export default function Navbar() {
           alt="Logo"
           width={50}
           height={50}
+          quality={100}
         />
         {/* Desktop Logo */}
         <Image
@@ -29,6 +30,7 @@ export default function Navbar() {
           alt="Logo"
           width={90}
           height={90}
+          quality={100}
         />
       </Link>
 
