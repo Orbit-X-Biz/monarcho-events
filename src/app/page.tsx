@@ -96,6 +96,115 @@ export default function Home() {
           unforgettable memories to every occasion.
         </p>
       </div>
+
+      {/* Our services component */}
+      <div className="flex flex-col">
+        <h1 className="text-center mb-5 font-semibold text-[#926B48] text-2xl">
+          Our Services
+        </h1>
+
+        {/* Service cards */}
+        <div className="flex flex-col space-y-3">
+          {/* Service cards - Life Celebrations*/}
+          <div className="flex flex-col space-y-2  bg-[#E5E0DA]">
+            <div className="relative w-full h-[300px] sm:h-[500px]">
+              <Image
+                src="/assets/services-life.png"
+                alt="Life Services"
+                fill
+                style={{ objectFit: "cover" }}
+                quality={100}
+              />
+            </div>
+            <div className="flex flex-col space-y-4 text-center px-3">
+              <h1 className="font-normal mt-2 text-[#926B48] text-xl">
+                Life Celebrations
+              </h1>
+              <p className="font-normal text-sm text-center">
+                Celebrate life’s milestones in style with us. From weddings,
+                proposals, and engagements to anniversaries, birthdays, baby
+                showers, and bachelor/bachelorette parties, we bring your vision
+                to life with elegance and creativity. Whether you dream of a
+                luxury wedding, cultural tradition, boho-inspired setup, or a
+                custom theme, our team handles everything : venue, décor,
+                entertainment, and coordination; so you can enjoy unforgettable
+                moments stress-free.
+              </p>
+              <Link
+                href="/"
+                className="bg-[#926B48] self-center w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+              >
+                More Info
+              </Link>
+            </div>
+          </div>
+
+          {/* Service cards - Entertainment & Music Events*/}
+          <div className="flex flex-col space-y-2  bg-[#E5E0DA]">
+            <div className="relative w-full h-[300px] sm:h-[500px]">
+              <Image
+                src="/assets/services-music.png"
+                alt="Life Services"
+                fill
+                style={{ objectFit: "cover" }}
+                quality={100}
+              />
+            </div>
+            <div className="flex flex-col space-y-4 text-center px-3">
+              <h1 className="font-normal mt-2 text-[#926B48] text-xl">
+                Entertainment & Music Events
+              </h1>
+              <p className="font-normal text-sm text-center">
+                Turn up the energy with Monarcho Events’ music experiences. From
+                concerts and festivals to DJ nights and live performances, we
+                curate unforgettable events that bring people together through
+                sound and atmosphere. With expert stage design, sound
+                engineering, and artist bookings, our team ensures every show is
+                seamlessly produced and full of life, whether it’s an intimate
+                lounge vibe or a large-scale concert.
+              </p>
+              <Link
+                href="/"
+                className="bg-[#926B48] self-center w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+              >
+                More Info
+              </Link>
+            </div>
+          </div>
+
+          {/* Service cards - Cultural & Traditional Events*/}
+          <div className="flex flex-col space-y-2  bg-[#E5E0DA]">
+            <div className="relative w-full h-[300px] sm:h-[500px]">
+              <Image
+                src="/assets/services-cultural.png"
+                alt="Life Services"
+                fill
+                style={{ objectFit: "cover" }}
+                quality={100}
+              />
+            </div>
+            <div className="flex flex-col space-y-4 text-center px-3">
+              <h1 className="font-normal mt-2 text-[#926B48] text-xl">
+                Cultural & Traditional Events
+              </h1>
+              <p className="font-normal text-sm text-center">
+                Celebrate heritage with Monarcho Events’ cultural experiences.
+                From festivals and traditional performances to community
+                celebrations, we craft events that honor authenticity while
+                creating meaningful memories. Working with cultural artists and
+                community leaders, our shows bring together music, dance,
+                storytelling, and tradition in vibrant, unforgettable ways.
+              </p>
+              <Link
+                href="/"
+                className="bg-[#926B48] self-center w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+              >
+                More Info
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
