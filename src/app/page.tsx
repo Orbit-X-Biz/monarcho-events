@@ -77,6 +77,23 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* What we do content */}
+      <div className="mt-10 mx-8 text-center bg-[#D6C6B7] p-5">
+        <h1 className="font-bold text-2xl text-[#926B48] mb-4">What We Do</h1>
+        <p className="font-light text-sm text-[#926B48]">
+          At Monarcho Events, we transform life’s most cherished moments into
+          luxury experiences that you’ll treasure forever. As a premier event
+          planning and destination management company, we specialize in creating
+          elegant weddings, bespoke proposals, corporate gatherings, and grand
+          cultural celebrations. Our expert planners combine creativity,
+          precision, and a signature touch of royalty to ensure that every
+          detail is flawlessly executed and uniquely reflects your story.
+          Whether you’re dreaming of an intimate celebration or a large-scale
+          event, Monarcho Events brings sophistication, personalization, and
+          unforgettable memories to every occasion.
+        </p>
+      </div>
     </>
   );
 }
