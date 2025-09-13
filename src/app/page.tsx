@@ -214,6 +214,51 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Why choose Monarcho component */}
+      <div className="flex flex-col my-10">
+        <h1 className="text-[#926B48] font-semibold text-xl text-center">
+          Why Choose Monarcho Events?
+        </h1>
+        <div className="flex flex-col space-y-5 px-4 mt-4 text-sm">
+          <p className="font-light">
+            When it comes to creating unforgettable celebrations, Monarcho
+            Events stands out as one of the leading event planners in Sri Lanka.
+            We combine creativity, cultural understanding, and flawless
+            execution to make every occasion extraordinary. Here’s why clients
+            trust us:
+          </p>
+          <ul className="list-disc ml-5 marker:text-[#926B48]">
+            <li className="font-light">
+              <span className="text-[#926B48] !font-semibold">End to End Event Planning</span> – From concept to completion, we manage
+              every detail of your event with precision.
+            </li>
+            <li className="font-light">
+              <span className="text-[#926B48] !font-semibold">Personalized Styling & Design</span> – Our team curates unique themes and
+              designs that reflect your vision and personality.
+            </li>
+            <li className="font-light">
+              <span className="text-[#926B48] !font-semibold">Exclusive Vendor Partnerships</span> – We collaborate with trusted
+              venues, caterers, entertainers, and service providers to deliver
+              premium experiences.
+            </li>
+            <li className="font-light">
+              <span className="text-[#926B48] !font-semibold">Cultural Sensitivity & Inclusion</span> – Whether it’s a traditional Sri
+              Lankan wedding, cultural festival, or international event, we
+              respect and honor every tradition.
+            </li>
+            <li className="font-light">
+              <span className="text-[#926B48] !font-semibold">Stress Free Coordination & Execution</span> – Sit back and enjoy while we
+              handle timelines, logistics, and on the day coordination
+              seamlessly.
+            </li>
+          </ul>
+          <p className="font-light">
+            With Monarcho Events, your celebration isn’t just planned, it’s
+            thoughtfully designed to create lasting memories.
+          </p>
+        </div>
+      </div>
     </>
   );
 }
