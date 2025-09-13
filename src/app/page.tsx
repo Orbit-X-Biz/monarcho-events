@@ -106,8 +106,9 @@ export default function Home() {
         {/* Service cards */}
         <div className="flex flex-col space-y-3">
           {/* Service cards - Life Celebrations*/}
-          <div className="flex flex-col space-y-2  bg-[#E5E0DA]">
-            <div className="relative w-full h-[300px] sm:h-[500px]">
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 bg-[#E5E0DA]">
+            {/* Image */}
+            <div className="relative w-full sm:w-2/6 h-[300px] sm:h-auto">
               <Image
                 src="/assets/services-life.png"
                 alt="Life Services"
@@ -116,11 +117,13 @@ export default function Home() {
                 quality={100}
               />
             </div>
-            <div className="flex flex-col space-y-4 text-center px-3">
+
+            {/* Text */}
+            <div className="flex flex-col space-y-4 text-center px-3 sm:ml-10 sm:justify-center sm:items-start sm:w-full py-4">
               <h1 className="font-normal mt-2 text-[#926B48] text-xl">
                 Life Celebrations
               </h1>
-              <p className="font-normal text-sm text-center">
+              <p className="font-normal text-sm text-center sm:text-left">
                 Celebrate life’s milestones in style with us. From weddings,
                 proposals, and engagements to anniversaries, birthdays, baby
                 showers, and bachelor/bachelorette parties, we bring your vision
@@ -132,7 +135,7 @@ export default function Home() {
               </p>
               <Link
                 href="/"
-                className="bg-[#926B48] self-center w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+                className="bg-[#926B48] sm:mt-8 self-center sm:self-start w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
               >
                 More Info
               </Link>
@@ -140,8 +143,9 @@ export default function Home() {
           </div>
 
           {/* Service cards - Entertainment & Music Events*/}
-          <div className="flex flex-col space-y-2  bg-[#E5E0DA]">
-            <div className="relative w-full h-[300px] sm:h-[500px]">
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 bg-[#E5E0DA]">
+            {/* Image */}
+            <div className="relative w-full sm:w-2/6 h-[300px] sm:h-auto">
               <Image
                 src="/assets/services-music.png"
                 alt="Life Services"
@@ -150,11 +154,13 @@ export default function Home() {
                 quality={100}
               />
             </div>
-            <div className="flex flex-col space-y-4 text-center px-3">
+
+            {/* Text */}
+            <div className="flex flex-col space-y-4 text-center px-3 sm:ml-10 sm:justify-center sm:items-start sm:w-full py-4">
               <h1 className="font-normal mt-2 text-[#926B48] text-xl">
                 Entertainment & Music Events
               </h1>
-              <p className="font-normal text-sm text-center">
+              <p className="font-normal text-sm text-center sm:text-left">
                 Turn up the energy with Monarcho Events’ music experiences. From
                 concerts and festivals to DJ nights and live performances, we
                 curate unforgettable events that bring people together through
@@ -165,7 +171,7 @@ export default function Home() {
               </p>
               <Link
                 href="/"
-                className="bg-[#926B48] self-center w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+                className="bg-[#926B48] sm:mt-8 self-center sm:self-start w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
               >
                 More Info
               </Link>
@@ -173,8 +179,9 @@ export default function Home() {
           </div>
 
           {/* Service cards - Cultural & Traditional Events*/}
-          <div className="flex flex-col space-y-2  bg-[#E5E0DA]">
-            <div className="relative w-full h-[300px] sm:h-[500px]">
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 bg-[#E5E0DA]">
+            {/* Image */}
+            <div className="relative w-full sm:w-2/6 h-[300px] sm:h-auto">
               <Image
                 src="/assets/services-cultural.png"
                 alt="Life Services"
@@ -183,11 +190,13 @@ export default function Home() {
                 quality={100}
               />
             </div>
-            <div className="flex flex-col space-y-4 text-center px-3">
+
+            {/* Text */}
+            <div className="flex flex-col space-y-4 text-center px-3 sm:ml-10 sm:justify-center sm:items-start sm:w-full py-4">
               <h1 className="font-normal mt-2 text-[#926B48] text-xl">
                 Cultural & Traditional Events
               </h1>
-              <p className="font-normal text-sm text-center">
+              <p className="font-normal text-sm text-center sm:text-left">
                 Celebrate heritage with Monarcho Events’ cultural experiences.
                 From festivals and traditional performances to community
                 celebrations, we craft events that honor authenticity while
@@ -197,7 +206,7 @@ export default function Home() {
               </p>
               <Link
                 href="/"
-                className="bg-[#926B48] self-center w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+                className="bg-[#926B48] sm:mt-8 self-center sm:self-start w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
               >
                 More Info
               </Link>
