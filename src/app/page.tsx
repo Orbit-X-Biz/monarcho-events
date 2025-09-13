@@ -99,7 +99,7 @@ export default function Home() {
 
       {/* Our services component */}
       <div className="flex flex-col">
-        <h1 className="text-center mb-5 font-semibold text-[#926B48] text-2xl">
+        <h1 className="text-center mb-5 font-semibold text-[#926B48] text-2xl sm:text-3xl">
           Our Services
         </h1>
 
@@ -120,10 +120,10 @@ export default function Home() {
 
             {/* Text */}
             <div className="flex flex-col space-y-4 text-center px-3 sm:ml-10 sm:justify-center sm:items-start sm:w-full py-4">
-              <h1 className="font-normal mt-2 text-[#926B48] text-xl">
+              <h1 className="font-normal mt-2 text-[#926B48] text-xl sm:text-2xl">
                 Life Celebrations
               </h1>
-              <p className="font-normal text-sm text-center sm:text-left">
+              <p className="font-normal text-sm sm:text-base text-center sm:text-left">
                 Celebrate life’s milestones in style with us. From weddings,
                 proposals, and engagements to anniversaries, birthdays, baby
                 showers, and bachelor/bachelorette parties, we bring your vision
@@ -157,10 +157,10 @@ export default function Home() {
 
             {/* Text */}
             <div className="flex flex-col space-y-4 text-center px-3 sm:ml-10 sm:justify-center sm:items-start sm:w-full py-4">
-              <h1 className="font-normal mt-2 text-[#926B48] text-xl">
+              <h1 className="font-normal mt-2 text-[#926B48] text-xl sm:text-2xl">
                 Entertainment & Music Events
               </h1>
-              <p className="font-normal text-sm text-center sm:text-left">
+              <p className="font-normal text-sm sm:text-base text-center sm:text-left">
                 Turn up the energy with Monarcho Events’ music experiences. From
                 concerts and festivals to DJ nights and live performances, we
                 curate unforgettable events that bring people together through
@@ -193,10 +193,10 @@ export default function Home() {
 
             {/* Text */}
             <div className="flex flex-col space-y-4 text-center px-3 sm:ml-10 sm:justify-center sm:items-start sm:w-full py-4">
-              <h1 className="font-normal mt-2 text-[#926B48] text-xl">
+              <h1 className="font-normal mt-2 text-[#926B48] text-xl sm:text-2xl">
                 Cultural & Traditional Events
               </h1>
-              <p className="font-normal text-sm text-center sm:text-left">
+              <p className="font-normal text-sm sm:text-base text-center sm:text-left">
                 Celebrate heritage with Monarcho Events’ cultural experiences.
                 From festivals and traditional performances to community
                 celebrations, we craft events that honor authenticity while
