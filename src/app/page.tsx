@@ -99,15 +99,16 @@ export default function Home() {
 
       {/* Our services component */}
       <div className="flex flex-col">
-        <h1 className="text-center mb-5 font-semibold text-[#926B48] text-2xl">
+        <h1 className="text-center mb-5 font-semibold text-[#926B48] text-2xl sm:text-3xl">
           Our Services
         </h1>
 
         {/* Service cards */}
         <div className="flex flex-col space-y-3">
           {/* Service cards - Life Celebrations*/}
-          <div className="flex flex-col space-y-2  bg-[#E5E0DA]">
-            <div className="relative w-full h-[300px] sm:h-[500px]">
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 bg-[#E5E0DA]">
+            {/* Image */}
+            <div className="relative w-full sm:w-2/6 h-[300px] sm:h-auto">
               <Image
                 src="/assets/services-life.png"
                 alt="Life Services"
@@ -116,11 +117,13 @@ export default function Home() {
                 quality={100}
               />
             </div>
-            <div className="flex flex-col space-y-4 text-center px-3">
-              <h1 className="font-normal mt-2 text-[#926B48] text-xl">
+
+            {/* Text */}
+            <div className="flex flex-col space-y-4 text-center px-3 sm:ml-10 sm:justify-center sm:items-start sm:w-full py-4">
+              <h1 className="font-normal mt-2 text-[#926B48] text-xl sm:text-2xl">
                 Life Celebrations
               </h1>
-              <p className="font-normal text-sm text-center">
+              <p className="font-normal text-sm sm:text-base text-center sm:text-left">
                 Celebrate life’s milestones in style with us. From weddings,
                 proposals, and engagements to anniversaries, birthdays, baby
                 showers, and bachelor/bachelorette parties, we bring your vision
@@ -132,7 +135,7 @@ export default function Home() {
               </p>
               <Link
                 href="/"
-                className="bg-[#926B48] self-center w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+                className="bg-[#926B48] sm:mt-8 self-center sm:self-start w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
               >
                 More Info
               </Link>
@@ -140,8 +143,9 @@ export default function Home() {
           </div>
 
           {/* Service cards - Entertainment & Music Events*/}
-          <div className="flex flex-col space-y-2  bg-[#E5E0DA]">
-            <div className="relative w-full h-[300px] sm:h-[500px]">
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 bg-[#E5E0DA]">
+            {/* Image */}
+            <div className="relative w-full sm:w-2/6 h-[300px] sm:h-auto">
               <Image
                 src="/assets/services-music.png"
                 alt="Life Services"
@@ -150,11 +154,13 @@ export default function Home() {
                 quality={100}
               />
             </div>
-            <div className="flex flex-col space-y-4 text-center px-3">
-              <h1 className="font-normal mt-2 text-[#926B48] text-xl">
+
+            {/* Text */}
+            <div className="flex flex-col space-y-4 text-center px-3 sm:ml-10 sm:justify-center sm:items-start sm:w-full py-4">
+              <h1 className="font-normal mt-2 text-[#926B48] text-xl sm:text-2xl">
                 Entertainment & Music Events
               </h1>
-              <p className="font-normal text-sm text-center">
+              <p className="font-normal text-sm sm:text-base text-center sm:text-left">
                 Turn up the energy with Monarcho Events’ music experiences. From
                 concerts and festivals to DJ nights and live performances, we
                 curate unforgettable events that bring people together through
@@ -165,7 +171,7 @@ export default function Home() {
               </p>
               <Link
                 href="/"
-                className="bg-[#926B48] self-center w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+                className="bg-[#926B48] sm:mt-8 self-center sm:self-start w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
               >
                 More Info
               </Link>
@@ -173,8 +179,9 @@ export default function Home() {
           </div>
 
           {/* Service cards - Cultural & Traditional Events*/}
-          <div className="flex flex-col space-y-2  bg-[#E5E0DA]">
-            <div className="relative w-full h-[300px] sm:h-[500px]">
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 bg-[#E5E0DA]">
+            {/* Image */}
+            <div className="relative w-full sm:w-2/6 h-[300px] sm:h-auto">
               <Image
                 src="/assets/services-cultural.png"
                 alt="Life Services"
@@ -183,11 +190,13 @@ export default function Home() {
                 quality={100}
               />
             </div>
-            <div className="flex flex-col space-y-4 text-center px-3">
-              <h1 className="font-normal mt-2 text-[#926B48] text-xl">
+
+            {/* Text */}
+            <div className="flex flex-col space-y-4 text-center px-3 sm:ml-10 sm:justify-center sm:items-start sm:w-full py-4">
+              <h1 className="font-normal mt-2 text-[#926B48] text-xl sm:text-2xl">
                 Cultural & Traditional Events
               </h1>
-              <p className="font-normal text-sm text-center">
+              <p className="font-normal text-sm sm:text-base text-center sm:text-left">
                 Celebrate heritage with Monarcho Events’ cultural experiences.
                 From festivals and traditional performances to community
                 celebrations, we craft events that honor authenticity while
@@ -197,12 +206,70 @@ export default function Home() {
               </p>
               <Link
                 href="/"
-                className="bg-[#926B48] self-center w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
+                className="bg-[#926B48] sm:mt-8 self-center sm:self-start w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
               >
                 More Info
               </Link>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Why choose Monarcho component */}
+      <div className="flex flex-col my-10">
+        <h1 className="text-[#926B48] font-semibold text-xl sm:text-3xl text-center">
+          Why Choose Monarcho Events?
+        </h1>
+        <div className="flex flex-col space-y-5 px-4 sm:px-10 mt-4 sm:mt-8 text-sm sm:text-base">
+          <p className="font-light">
+            When it comes to creating unforgettable celebrations, Monarcho
+            Events stands out as one of the leading event planners in Sri Lanka.
+            We combine creativity, cultural understanding, and flawless
+            execution to make every occasion extraordinary. Here’s why clients
+            trust us:
+          </p>
+          <ul className="list-disc ml-5 marker:text-[#926B48]">
+            <li className="font-light">
+              <span className="text-[#926B48] !font-semibold">
+                End to End Event Planning
+              </span>{" "}
+              – From concept to completion, we manage every detail of your event
+              with precision.
+            </li>
+            <li className="font-light">
+              <span className="text-[#926B48] !font-semibold">
+                Personalized Styling & Design
+              </span>{" "}
+              – Our team curates unique themes and designs that reflect your
+              vision and personality.
+            </li>
+            <li className="font-light">
+              <span className="text-[#926B48] !font-semibold">
+                Exclusive Vendor Partnerships
+              </span>{" "}
+              – We collaborate with trusted venues, caterers, entertainers, and
+              service providers to deliver premium experiences.
+            </li>
+            <li className="font-light">
+              <span className="text-[#926B48] !font-semibold">
+                Cultural Sensitivity & Inclusion
+              </span>{" "}
+              – Whether it’s a traditional Sri Lankan wedding, cultural
+              festival, or international event, we respect and honor every
+              tradition.
+            </li>
+            <li className="font-light">
+              <span className="text-[#926B48] !font-semibold">
+                Stress Free Coordination & Execution
+              </span>{" "}
+              – Sit back and enjoy while we handle timelines, logistics, and on
+              the day coordination seamlessly.
+            </li>
+          </ul>
+          <p className="font-light">
+            With Monarcho Events, your celebration isn’t just planned, it’s
+            thoughtfully designed to create lasting memories.
+          </p>
         </div>
       </div>
     </>
