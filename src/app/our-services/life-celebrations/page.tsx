@@ -53,11 +53,11 @@ export default function LifeCelebrationPage() {
       </div>
 
       {/* Wedding packages component */}
-      <div className="mt-5 ">
+      <div className="mt-5 sm:mx-6">
         {/* Main wedding details banner */}
         <div>
           {/* Background Image */}
-          <div className="relative w-full h-[300px]">
+          <div className="relative w-full h-[300px] sm:h-[230px]">
             <Image
               src="/assets/wedding-banner-mobile.png"
               alt="Weddings"
@@ -66,12 +66,20 @@ export default function LifeCelebrationPage() {
               quality={100}
               className="sm:hidden"
             />
+            <Image
+              src="/assets/wedding-banner.png"
+              alt="Weddings"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="hidden sm:flex"
+            />
             {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col z-20 py-4 px-4 text-white">
-              <h1 className="font-[Playfair] font-bold italic text-2xl">
+            <div className="absolute inset-0 flex flex-col z-20 py-4 sm:py-8 px-4 sm:px-8 text-white">
+              <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
                 Weddings
               </h1>
-              <p className="text-sm mt-4 font-normal">
+              <p className="text-sm sm:text-base mt-4 font-light">
                 Your wedding day should be nothing short of extraordinary. At
                 Monarcho Events, we specialize in creating luxury weddings in
                 Sri Lanka and beyond, designed to be elegant, personalized, and
@@ -80,7 +88,7 @@ export default function LifeCelebrationPage() {
                 boho-style celebration, we tailor every detail to reflect your
                 unique love story.
               </p>
-              <p className="text-sm font-light mt-4">
+              <p className="text-sm sm:text-base font-extralight mt-4 sm:mt-6">
                 Wedding Themes We Offer:
               </p>
             </div>
