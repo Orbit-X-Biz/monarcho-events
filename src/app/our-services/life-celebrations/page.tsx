@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+//http://localhost:3000/our-services/life-celebrations
 export default function LifeCelebrationPage() {
   return (
     <>
@@ -49,6 +50,42 @@ export default function LifeCelebrationPage() {
           Explore the occasions we turn into timeless memories under our Life
           Celebrations service:
         </h1>
+      </div>
+
+      {/* Wedding packages component */}
+      <div className="mt-5 ">
+        {/* Main wedding details banner */}
+        <div>
+          {/* Background Image */}
+          <div className="relative w-full h-[300px]">
+            <Image
+              src="/assets/wedding-banner-mobile.png"
+              alt="Weddings"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="sm:hidden"
+            />
+            {/* Text Overlay */}
+            <div className="absolute inset-0 flex flex-col z-20 py-4 px-4 text-white">
+              <h1 className="font-[Playfair] font-bold italic text-2xl">
+                Weddings
+              </h1>
+              <p className="text-sm mt-4 font-normal">
+                Your wedding day should be nothing short of extraordinary. At
+                Monarcho Events, we specialize in creating luxury weddings in
+                Sri Lanka and beyond, designed to be elegant, personalized, and
+                completely stress-free. Whether you dream of a grand destination
+                wedding, a traditional cultural ceremony, or a whimsical
+                boho-style celebration, we tailor every detail to reflect your
+                unique love story.
+              </p>
+              <p className="text-sm font-light mt-4">
+                Wedding Themes We Offer:
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
