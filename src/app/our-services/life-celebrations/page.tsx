@@ -94,6 +94,92 @@ export default function LifeCelebrationPage() {
             </div>
           </div>
         </div>
+        {/* Sub cards */}
+        <div className="flex flex-col">
+          {/* Luxury (Banquet Style) */}
+          <div className="px-4 py-4 border-[#926B48] border-[1px]">
+            <h1 className="font-[Playfair] font-light italic text-xl text-[#926B48]">
+              Luxury (Banquet Style)
+            </h1>
+            <p className="mt-2 text-[#926B48] text-xs">
+              Indulge in ultimate sophistication with grand banquet-style
+              weddings, featuring crystal chandeliers, lavish décor, and
+              five-star service. Perfect for couples dreaming of a high-end,
+              glamorous wedding experience in Sri Lanka or at an exclusive
+              destination.
+            </p>
+          </div>
+          {/* Traditional Weddings */}
+          <div className="px-4 py-4 border-[#926B48] border-[1px]">
+            <h1 className="font-[Playfair] font-light italic text-xl text-[#926B48]">
+              Traditional Weddings
+            </h1>
+            <p className="mt-2 text-[#926B48] text-xs">
+              Celebrate heritage with beautifully curated traditional Sri Lankan
+              wedding rituals, attire, and décor. We blend cultural authenticity
+              with modern wedding planning expertise to create timeless,
+              unforgettable ceremonies.
+            </p>
+          </div>
+          {/* Boho Weddings */}
+          <div className="px-4 py-4 border-[#926B48] border-[1px]">
+            <h1 className="font-[Playfair] font-light italic text-xl text-[#926B48]">
+              Boho Weddings
+            </h1>
+            <p className="mt-2 text-[#926B48] text-xs">
+              Designed for free-spirited couples, our boho-style weddings
+              incorporate earthy tones, natural textures, floral crowns, and
+              dreamy outdoor settings. Ideal for couples seeking relaxed,
+              romantic, and Instagram-worthy celebrations.
+            </p>
+          </div>
+          {/* Exotic Weddings */}
+          <div className="px-4 py-4 border-[#926B48] border-[1px]">
+            <h1 className="font-[Playfair] font-light italic text-xl text-[#926B48]">
+              Exotic Weddings
+            </h1>
+            <p className="mt-2 text-[#926B48] text-xs">
+              Immerse yourself in a wedding inspired by tropical escapes,
+              vibrant colors, and culturally diverse elements. Perfect for
+              couples who want a one-of-a-kind, destination-style celebration
+              filled with unique experiences.
+            </p>
+          </div>
+          {/* Indian Weddings */}
+          <div className="px-4 py-4 border-[#926B48] border-[1px]">
+            <h1 className="font-[Playfair] font-light italic text-xl text-[#926B48]">
+              Indian Weddings
+            </h1>
+            <p className="mt-2 text-[#926B48] text-xs">
+              From lively Mehendi ceremonies to grand décor, we specialize in
+              authentic Indian weddings that honor rich traditions while
+              offering modern, stress-free planning and luxurious details.
+            </p>
+          </div>
+          {/* Custom Wedding Themes (Upon Request) */}
+          <div className="px-4 py-4 border-[#926B48] border-[1px]">
+            <h1 className="font-[Playfair] font-light italic text-xl text-[#926B48]">
+              Custom Wedding Themes (Upon Request)
+            </h1>
+            <p className="mt-2 text-[#926B48] text-xs">
+              Have a unique vision? We welcome custom wedding themes. Share your
+              ideas, and our expert team will craft a personalized celebration
+              that perfectly reflects your love story.
+            </p>
+          </div>
+          {/* Comprehensive Wedding Services Include: */}
+          <div className="px-4 py-4 border-[#926B48] border-[1px]">
+            <h1 className="font-[Playfair] font-light italic text-xl text-[#926B48]">
+              Comprehensive Wedding Services Include:
+            </h1>
+            <ul className="marker:text-[#926B48] pl-4 mt-2 list-disc text-[#926B48] text-xs">
+              <li>Venue Selection & Sourcing</li>
+              <li>Bespoke Event Design & Décor Styling</li>
+              <li>Full Wedding Planning & Coordination</li>
+              <li>Local Cultural Touches (as per package)</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </>
   );
