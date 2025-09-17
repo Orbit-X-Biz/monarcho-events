@@ -353,6 +353,45 @@ export default function LifeCelebrationPage() {
           </div>
         </div>
       </div>
+
+      {/* Baby Showers */}
+      <div className="mt-5 sm:mx-6">
+        {/* Main Baby Showers details banner */}
+        <div>
+          {/* Background Image */}
+          <div className="relative w-full h-[300px] sm:h-[230px]">
+            <Image
+              src="/assets/baby-banner-mobile.png"
+              alt="Baby Showers"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="sm:hidden"
+            />
+            <Image
+              src="/assets/baby-banner.png"
+              alt="Baby Showers"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="hidden sm:flex"
+            />
+            {/* Text Overlay */}
+            <div className="absolute inset-0 flex flex-col z-20 py-8 sm:py-12 px-4 sm:px-8 text-white">
+              <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
+                Baby Showers
+              </h1>
+              <p className="text-sm sm:text-base mt-4 font-light">
+                Celebrate new beginnings with expertly planned baby showers in
+                Sri Lanka. Monarcho Events creates beautifully styled baby
+                shower events with heartwarming details, soft aesthetics, and
+                fun activities, ensuring a memorable and joyful welcome for your
+                little one.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
