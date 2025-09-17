@@ -512,6 +512,49 @@ export default function LifeCelebrationPage() {
           </div>
         </div>
       </div>
+
+      {/* Themes for Other Life Celebrations */}
+      <div className="mt-5 sm:mx-6 mb-5">
+        {/* Main Themes for Other Life Celebrations details banner */}
+        <div>
+          {/* Background Image */}
+          <div className="relative w-full h-[350px] sm:h-[230px]">
+            <Image
+              src="/assets/theme-banner-mobile.png"
+              alt="Themes for Other Life Celebrations"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="sm:hidden"
+            />
+            <Image
+              src="/assets/theme-banner.png"
+              alt="Themes for Other Life Celebrations"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="hidden sm:flex"
+            />
+            {/* Text Overlay */}
+            <div className="absolute inset-0 flex flex-col z-20 py-8 sm:py-12 px-4 sm:px-8 text-white">
+              <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
+                Themes for Other Life Celebrations
+              </h1>
+              <p className="text-sm sm:text-base mt-4 font-light">
+                At Monarcho Events, every life milestone deserves a theme that
+                feels uniquely yours. Unlike weddings, our other life
+                celebrations come with complete open theme customization, giving
+                you the freedom to dream, and us the opportunity to design.
+                Whether you envision a whimsical outdoor party, a minimalist
+                modern gathering, a vintage inspired celebration, or an
+                extravagant affair, our expert planners bring your ideas to
+                life. With creativity, detail, and flawless execution, we ensure
+                your event reflects your style and story.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
