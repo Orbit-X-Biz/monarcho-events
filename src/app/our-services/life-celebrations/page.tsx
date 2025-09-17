@@ -214,7 +214,7 @@ export default function LifeCelebrationPage() {
               className="hidden sm:flex"
             />
             {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col z-20 py-4 sm:py-8 px-4 sm:px-8 text-white">
+            <div className="absolute inset-0 flex flex-col z-20 py-4 sm:py-12 px-4 sm:px-8 text-white">
               <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
                 Proposals
               </h1>
@@ -255,7 +255,7 @@ export default function LifeCelebrationPage() {
               className="hidden sm:flex"
             />
             {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col z-20 py-4 sm:py-8 px-4 sm:px-8 text-white">
+            <div className="absolute inset-0 flex flex-col z-20 py-4 sm:py-12 px-4 sm:px-8 text-white">
               <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
                 Engagements
               </h1>
@@ -267,6 +267,46 @@ export default function LifeCelebrationPage() {
                 story. We create memorable celebrations that set the perfect
                 tone for your upcoming wedding, blending sophistication,
                 culture, and joy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Anniversaries */}
+      <div className="mt-5 sm:mx-6">
+        {/* Main Anniversaries details banner */}
+        <div>
+          {/* Background Image */}
+          <div className="relative w-full h-[300px] sm:h-[230px]">
+            <Image
+              src="/assets/anniversary-banner-mobile.png"
+              alt="Anniversaries"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="sm:hidden"
+            />
+            <Image
+              src="/assets/anniversary-banner.png"
+              alt="Anniversaries"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="hidden sm:flex"
+            />
+            {/* Text Overlay */}
+            <div className="absolute inset-0 flex flex-col z-20 py-4 sm:py-12 px-4 sm:px-8 text-white">
+              <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
+                Anniversaries
+              </h1>
+              <p className="text-sm sm:text-base mt-4 font-light">
+                Celebrate your love story with a personalized anniversary party
+                in Sri Lanka. From intimate 1st-anniversary gatherings to grand
+                50th celebrations, Monarcho Events crafts memorable events
+                filled with love, joy, and meaningful moments. Our anniversary
+                event planning ensures every detail reflects your shared journey
+                and future dreams.
               </p>
             </div>
           </div>
