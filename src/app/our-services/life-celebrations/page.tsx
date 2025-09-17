@@ -472,6 +472,46 @@ export default function LifeCelebrationPage() {
           </div>
         </div>
       </div>
+
+      {/* Bachelor Parties */}
+      <div className="mt-5 sm:mx-6">
+        {/* Main Bachelor Parties details banner */}
+        <div>
+          {/* Background Image */}
+          <div className="relative w-full h-[300px] sm:h-[230px]">
+            <Image
+              src="/assets/bachelor-banner-mobile.png"
+              alt="Bachelor Parties"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="sm:hidden"
+            />
+            <Image
+              src="/assets/bachelor-banner.png"
+              alt="Bachelor Parties"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="hidden sm:flex"
+            />
+            {/* Text Overlay */}
+            <div className="absolute inset-0 flex flex-col z-20 py-8 sm:py-12 px-4 sm:px-8 text-white">
+              <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
+                Bachelor Parties
+              </h1>
+              <p className="text-sm sm:text-base mt-4 font-light">
+                Give the groom-to-be an unforgettable send-off with a bachelor
+                party designed to match his style and vibe. From luxury nights
+                out in the city to adventurous weekend getaways, Monarcho Events
+                creates tailor-made bachelor parties in Sri Lanka that combine
+                fun, excitement, and flawless planning. We handle every detail,
+                so the groom and his crew can focus on celebrating in style.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
