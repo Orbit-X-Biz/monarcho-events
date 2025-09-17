@@ -190,6 +190,47 @@ export default function LifeCelebrationPage() {
           </div>
         </div>
       </div>
+
+      {/* Proposals */}
+      <div className="mt-5 sm:mx-6">
+        {/* Main proposals details banner */}
+        <div>
+          {/* Background Image */}
+          <div className="relative w-full h-[300px] sm:h-[230px]">
+            <Image
+              src="/assets/proposal-banner-mobile.png"
+              alt="Proposals"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="sm:hidden"
+            />
+            <Image
+              src="/assets/proposal-banner.png"
+              alt="Weddings"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="hidden sm:flex"
+            />
+            {/* Text Overlay */}
+            <div className="absolute inset-0 flex flex-col z-20 py-4 sm:py-8 px-4 sm:px-8 text-white">
+              <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
+                Proposals
+              </h1>
+              <p className="text-sm sm:text-base mt-4 font-light">
+                Pop the question in style with a romantic proposal designed to
+                be as unforgettable as your love story. Whether you dream of an
+                intimate beachfront proposal, a surprise engagement surrounded
+                by family and friends, or a luxurious private setting, our team
+                specializes in creating flawless, personalized proposal
+                experiences. From creative planning to seamless execution, we
+                ensure every detail makes your engagement moment truly magical.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
