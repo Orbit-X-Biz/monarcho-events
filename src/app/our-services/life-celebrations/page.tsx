@@ -207,7 +207,7 @@ export default function LifeCelebrationPage() {
             />
             <Image
               src="/assets/proposal-banner.png"
-              alt="Weddings"
+              alt="Proposals"
               fill
               style={{ objectFit: "cover" }}
               quality={100}
@@ -226,6 +226,47 @@ export default function LifeCelebrationPage() {
                 specializes in creating flawless, personalized proposal
                 experiences. From creative planning to seamless execution, we
                 ensure every detail makes your engagement moment truly magical.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Engagements */}
+      <div className="mt-5 sm:mx-6">
+        {/* Main Engagements details banner */}
+        <div>
+          {/* Background Image */}
+          <div className="relative w-full h-[300px] sm:h-[230px]">
+            <Image
+              src="/assets/engagement-banner-mobile.png"
+              alt="Engagements"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="sm:hidden"
+            />
+            <Image
+              src="/assets/engagement-banner.png"
+              alt="Engagements"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="hidden sm:flex"
+            />
+            {/* Text Overlay */}
+            <div className="absolute inset-0 flex flex-col z-20 py-4 sm:py-8 px-4 sm:px-8 text-white">
+              <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
+                Engagements
+              </h1>
+              <p className="text-sm sm:text-base mt-4 font-light">
+                Celebrate the beginning of forever with a personalized
+                engagement party crafted to your style. From elegant cocktail
+                evenings to traditional family gatherings, our engagement event
+                planning in Sri Lanka ensures every detail reflects your love
+                story. We create memorable celebrations that set the perfect
+                tone for your upcoming wedding, blending sophistication,
+                culture, and joy.
               </p>
             </div>
           </div>
