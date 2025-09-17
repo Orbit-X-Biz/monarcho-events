@@ -431,6 +431,47 @@ export default function LifeCelebrationPage() {
           </div>
         </div>
       </div>
+
+      {/* Bride to Be Celebrations */}
+      <div className="mt-5 sm:mx-6">
+        {/* Main Bride to Be Celebrations details banner */}
+        <div>
+          {/* Background Image */}
+          <div className="relative w-full h-[300px] sm:h-[230px]">
+            <Image
+              src="/assets/b2b-banner-mobile.png"
+              alt="Bride to Be Celebrations"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="sm:hidden"
+            />
+            <Image
+              src="/assets/b2b-banner.png"
+              alt="Bride to Be Celebrations"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="hidden sm:flex"
+            />
+            {/* Text Overlay */}
+            <div className="absolute inset-0 flex flex-col z-20 py-8 sm:py-12 px-4 sm:px-8 text-white">
+              <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
+                Bride to Be Celebrations
+              </h1>
+              <p className="text-sm sm:text-base mt-4 font-light">
+                Celebrate the bride’s special journey with unforgettable
+                pre-wedding events designed to pamper and delight. From chic
+                bridal brunches and elegant high teas to luxury spa retreats and
+                fun-filled gatherings with friends, Monarcho Events curates
+                stylish and love-filled bride-to-be celebrations in Sri Lanka.
+                We ensure every detail reflects her personality, making it the
+                perfect prelude to the big day.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
