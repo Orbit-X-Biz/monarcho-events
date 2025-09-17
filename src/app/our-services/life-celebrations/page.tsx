@@ -214,7 +214,7 @@ export default function LifeCelebrationPage() {
               className="hidden sm:flex"
             />
             {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col z-20 py-4 sm:py-12 px-4 sm:px-8 text-white">
+            <div className="absolute inset-0 flex flex-col z-20 py-8 sm:py-12 px-4 sm:px-8 text-white">
               <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
                 Proposals
               </h1>
@@ -255,7 +255,7 @@ export default function LifeCelebrationPage() {
               className="hidden sm:flex"
             />
             {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col z-20 py-4 sm:py-12 px-4 sm:px-8 text-white">
+            <div className="absolute inset-0 flex flex-col z-20 py-8 sm:py-12 px-4 sm:px-8 text-white">
               <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
                 Engagements
               </h1>
@@ -296,7 +296,7 @@ export default function LifeCelebrationPage() {
               className="hidden sm:flex"
             />
             {/* Text Overlay */}
-            <div className="absolute inset-0 flex flex-col z-20 py-4 sm:py-12 px-4 sm:px-8 text-white">
+            <div className="absolute inset-0 flex flex-col z-20 py-8 sm:py-12 px-4 sm:px-8 text-white">
               <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
                 Anniversaries
               </h1>
@@ -307,6 +307,47 @@ export default function LifeCelebrationPage() {
                 filled with love, joy, and meaningful moments. Our anniversary
                 event planning ensures every detail reflects your shared journey
                 and future dreams.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Birthday Parties */}
+      <div className="mt-5 sm:mx-6">
+        {/* Main Birthday Parties details banner */}
+        <div>
+          {/* Background Image */}
+          <div className="relative w-full h-[300px] sm:h-[230px]">
+            <Image
+              src="/assets/birthday-banner-mobile.png"
+              alt="Birthday Parties"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="sm:hidden"
+            />
+            <Image
+              src="/assets/birthday-banner.png"
+              alt="Birthday Parties"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="hidden sm:flex"
+            />
+            {/* Text Overlay */}
+            <div className="absolute inset-0 flex flex-col z-20 py-8 sm:py-12 px-4 sm:px-8 text-white">
+              <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
+                Birthday Parties
+              </h1>
+              <p className="text-sm sm:text-base mt-4 font-light">
+                Celebrate birthdays in style with personalized birthday party
+                planning in Sri Lanka. From fun and colorful kids’ themed
+                parties to milestone birthday bashes for adults, Monarcho Events
+                handles every detail, from decor to entertainment, so you can
+                enjoy the celebration stress free. Choose your vibe: elegant,
+                funky, retro, or classic, and we’ll bring your birthday vision
+                to life.
               </p>
             </div>
           </div>
