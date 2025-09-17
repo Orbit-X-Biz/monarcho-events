@@ -392,6 +392,45 @@ export default function LifeCelebrationPage() {
           </div>
         </div>
       </div>
+
+      {/* Gender Reveal Parties */}
+      <div className="mt-5 sm:mx-6">
+        {/* Main Gender Reveal Parties details banner */}
+        <div>
+          {/* Background Image */}
+          <div className="relative w-full h-[300px] sm:h-[230px]">
+            <Image
+              src="/assets/gender-banner-mobile.png"
+              alt="Gender Reveal Parties"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="sm:hidden"
+            />
+            <Image
+              src="/assets/gender-banner.png"
+              alt="Gender Reveal Parties"
+              fill
+              style={{ objectFit: "cover" }}
+              quality={100}
+              className="hidden sm:flex"
+            />
+            {/* Text Overlay */}
+            <div className="absolute inset-0 flex flex-col z-20 py-8 sm:py-12 px-4 sm:px-8 text-white">
+              <h1 className="font-[Playfair] font-bold italic text-2xl sm:text-3xl">
+                Gender Reveal Parties
+              </h1>
+              <p className="text-sm sm:text-base mt-4 font-light">
+                Make your baby’s gender reveal an unforgettable celebration with
+                Monarcho Events. From balloon pops and smoke bombs to cake
+                reveals and fully customized concepts, we design creative,
+                exciting, and seamless gender reveal parties in Sri Lanka that
+                keep the surprise magical for you and your loved ones.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
