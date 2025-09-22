@@ -7,13 +7,13 @@ export default function AboutUs() {
 
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-semibold text-[#926B48] text-center my-4">
+        <h1 className="text-2xl sm:text-3xl font-semibold text-[#926B48] text-center my-4 sm:my-8">
           Our Story
         </h1>
       </div>
 
       {/* Paragraph */}
-      <div className="mx-4 text-justify font-normal text-sm">
+      <div className="mx-4 text-justify font-normal text-sm sm:text-base">
         <p>
           Our journey began in 1993 with Professor Travel, founded by Dolitha
           Ranchagoda, whose deep love for Sri Lanka and passion for authentic
@@ -47,37 +47,38 @@ export default function AboutUs() {
       </div>
 
       {/* People */}
-      <div className="my-5 mx-4">
-        <h2 className="text-xl underline font-semibold text-[#926B48] text-center">
+      <div className="my-5 mx-4 flex flex-col items-center justify-center">
+        <h2 className="text-xl sm:text-2xl underline font-semibold text-[#926B48] text-center">
           Our Team
         </h2>
 
-        <div className="my-2 flex flex-col space-y-8 py-2">
-          {/* Each name card */}
-          <div className="text-xs text-center">
+        <div className="my-4 sm:my-8 py-2 grid grid-cols-1 gap-y-8 sm:grid-cols-6 sm:gap-x-4 sm:gap-y-8">
+          {/* First row - 3 cards spanning 2 columns each */}
+          <div className="text-xs sm:text-sm text-center sm:col-span-2">
             <p className="font-semibold">Dolitha Ranchagoda</p>
             <p className="font-light">Founder | Event Planner</p>
           </div>
 
-          <div className="text-xs text-center">
+          <div className="text-xs sm:text-sm text-center sm:col-span-2">
             <p className="font-semibold">Thajana Ranchagoda</p>
             <p className="font-light">Event Planner & Social Media Manager</p>
           </div>
 
-          <div className="text-xs text-center">
+          <div className="text-xs sm:text-sm text-center sm:col-span-2">
             <p className="font-semibold">Kavinda Gamagedara</p>
             <p className="font-light">Co-Founder & Event Coordinator</p>
           </div>
 
-          <div className="text-xs text-center">
+          {/* Second row - 2 cards with offset positioning */}
+          <div className="text-xs sm:text-sm text-center sm:col-span-2 sm:col-start-2">
             <p className="font-semibold">Buddhika Athauda</p>
             <p className="font-light">International Events Manager</p>
           </div>
 
-          <div className="text-xs text-center">
+          <div className="text-xs sm:text-sm text-center sm:col-span-2 sm:col-start-4">
             <p className="font-semibold">Sanka Fernando</p>
             <p className="font-light">
-              Reservations Manager – Destinations & Hospitality
+              Reservations Manager – Destinations & Hospitality
             </p>
           </div>
         </div>
