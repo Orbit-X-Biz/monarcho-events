@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const sliderImages = ["/assets/slide1.JPG", "/assets/slide2.JPG"];
+const sliderImages = ["/assets/slide1.png", "/assets/slide2.JPG"];
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
@@ -83,18 +83,27 @@ export default function Home() {
         <h1 className="font-bold text-2xl sm:text-4xl text-[#926B48] mb-4">
           What We Do
         </h1>
-        <p className="font-light text-sm sm:text-xl text-[#926B48]">
-          At Monarcho Events, we transform life’s most cherished moments into
-          luxury experiences that you’ll treasure forever. As a premier event
-          planning and destination management company, we specialize in creating
-          elegant weddings, bespoke proposals, corporate gatherings, and grand
-          cultural celebrations. Our expert planners combine creativity,
-          precision, and a signature touch of royalty to ensure that every
-          detail is flawlessly executed and uniquely reflects your story.
-          Whether you’re dreaming of an intimate celebration or a large-scale
-          event, Monarcho Events brings sophistication, personalization, and
-          unforgettable memories to every occasion.
-        </p>
+        <div className="font-light text-sm sm:text-xl text-[#926B48]">
+          <p>
+            At Monarcho Events, we transform life’s most cherished moments into
+            luxury experiences that you’ll treasure forever.
+          </p>
+          <p>
+            As a premier event planning and destination management company, we
+            specialize in creating elegant weddings, bespoke proposals,
+            corporate gatherings, and grand cultural celebrations.
+          </p>
+          <p>
+            Our expert planners combine creativity, precision, and a signature
+            touch of royalty to ensure that every detail is flawlessly executed
+            and uniquely reflects your story.
+          </p>
+          <p>
+            Whether you’re dreaming of an intimate celebration or a large-scale
+            event, Monarcho Events brings sophistication, personalization, and
+            unforgettable memories to every occasion.
+          </p>
+        </div>
       </div>
 
       {/* Our services component */}
@@ -110,7 +119,7 @@ export default function Home() {
             {/* Image */}
             <div className="relative w-full sm:w-2/6 h-[300px] sm:h-auto">
               <Image
-                src="/assets/services-life.png"
+                src="/assets/services-life.jpg"
                 alt="Life Services"
                 fill
                 style={{ objectFit: "cover" }}

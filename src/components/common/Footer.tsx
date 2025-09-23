@@ -11,10 +11,10 @@ export default function Footer() {
         {/* Logo */}
         <Image
           className="sm:hidden"
-          src="/assets/bg-white-logo.jpg"
+          src="/assets/logo.png"
           alt="Logo"
-          width={120}
-          height={120}
+          width={60}
+          height={60}
           quality={100}
         />
 
@@ -124,10 +124,10 @@ export default function Footer() {
             <div>
               <Image
                 className=""
-                src="/assets/bg-white-logo.jpg"
+                src="/assets/logo.png"
                 alt="Logo"
-                width={120}
-                height={120}
+                width={80}
+                height={80}
                 quality={100}
               />
             </div>
