@@ -47,7 +47,7 @@ export default function Navbar() {
           href="/"
           className="hover:underline cursor-pointer font-normal text-base"
         >
-          Testimonials
+          Gallery
         </Link>
 
         <Link
@@ -97,7 +97,7 @@ export default function Navbar() {
                 href="/"
                 className="hover:underline cursor-pointer font-normal text-sm"
               >
-                Testimonials
+                Gallery
               </Link>
 
               <Link

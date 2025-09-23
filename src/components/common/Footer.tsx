@@ -47,7 +47,7 @@ export default function Footer() {
             href="/"
             className="hover:underline cursor-pointer font-normal text-sm"
           >
-            Testimonials
+            Gallery
           </Link>
 
           <Link
@@ -163,7 +163,7 @@ export default function Footer() {
               href="/"
               className="hover:underline cursor-pointer font-normal text-sm"
             >
-              Testimonials
+              Gallery
             </Link>
 
             <Link
