@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 //http://localhost:3000/our-services/entertainment
-export default function LifeCelebrationPage() {
+export default function EntertainmentPage() {
   return (
     <>
       {/* Blank div for navbar */}

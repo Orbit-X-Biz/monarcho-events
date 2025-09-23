@@ -44,28 +44,28 @@ export default function Navbar() {
         </Link>
 
         <Link
-          href="/"
+          href="/gallery"
           className="hover:underline cursor-pointer font-normal text-base"
         >
           Gallery
         </Link>
 
         <Link
-          href="/"
+          href="/about-us"
           className="hover:underline cursor-pointer font-normal text-base"
         >
           About Us
         </Link>
 
         <Link
-          href="/"
+          href="/contact-us"
           className="hover:underline cursor-pointer font-normal text-base"
         >
           Contact Us
         </Link>
 
         <Link
-          href="/"
+          href="/contact-us"
           className="bg-[#926B48] px-8 py-2 font-semibold text-sm text-white rounded-md cursor-pointer"
         >
           Book Now
@@ -87,35 +87,49 @@ export default function Navbar() {
             <SheetHeader></SheetHeader>
             <div className="flex flex-col gap-4 mt-2 items-end pr-4.5">
               <Link
-                href="/"
+                href="/our-services/life-celebrations"
                 className="hover:underline cursor-pointer font-normal text-sm"
               >
-                Services
+                Life Celebrations
               </Link>
 
               <Link
-                href="/"
+                href="/our-services/entertainment"
+                className="hover:underline cursor-pointer font-normal text-sm"
+              >
+                Entertainment
+              </Link>
+
+              <Link
+                href="/our-services/traditional"
+                className="hover:underline cursor-pointer font-normal text-sm"
+              >
+                Cultural
+              </Link>
+
+              <Link
+                href="/gallery"
                 className="hover:underline cursor-pointer font-normal text-sm"
               >
                 Gallery
               </Link>
 
               <Link
-                href="/"
+                href="/about-us"
                 className="hover:underline cursor-pointer font-normal text-sm"
               >
                 About Us
               </Link>
 
               <Link
-                href="/"
+                href="/contact-us"
                 className="hover:underline cursor-pointer font-normal text-sm"
               >
                 Contact Us
               </Link>
 
               <Link
-                href="/"
+                href="/contact-us"
                 className="bg-[#926B48] px-6 py-2 font-semibold text-xs text-white rounded-md cursor-pointer"
               >
                 Book Now

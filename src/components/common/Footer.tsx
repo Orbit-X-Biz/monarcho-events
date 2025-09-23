@@ -37,28 +37,28 @@ export default function Footer() {
         {/* Quick Links */}
         <div className="my-4 text-center flex flex-col">
           <Link
-            href="/"
+            href="/contact-us"
             className="hover:underline cursor-pointer font-normal text-sm"
           >
             Bookings
           </Link>
 
           <Link
-            href="/"
+            href="/gallery"
             className="hover:underline cursor-pointer font-normal text-sm"
           >
             Gallery
           </Link>
 
           <Link
-            href="/"
+            href="/about-us"
             className="hover:underline cursor-pointer font-normal text-sm"
           >
             About Us
           </Link>
 
           <Link
-            href="/"
+            href="/contact-us"
             className="hover:underline cursor-pointer font-normal text-sm"
           >
             Contact Us
@@ -153,28 +153,28 @@ export default function Footer() {
           {/* Quick links */}
           <div className="flex flex-col space-y-4 text-center">
             <Link
-              href="/"
+              href="/contact-us"
               className="hover:underline cursor-pointer font-normal text-sm"
             >
               Bookings
             </Link>
 
             <Link
-              href="/"
+              href="/gallery"
               className="hover:underline cursor-pointer font-normal text-sm"
             >
               Gallery
             </Link>
 
             <Link
-              href="/"
+              href="/about-us"
               className="hover:underline cursor-pointer font-normal text-sm"
             >
               About Us
             </Link>
 
             <Link
-              href="/"
+              href="/contact-us"
               className="hover:underline cursor-pointer font-normal text-sm"
             >
               Contact Us
