@@ -51,5 +51,16 @@
             "/assets/id2/29.jpg",
             "/assets/id2/30.jpg"
         ]
+    },
+    {
+        "identifier": "id3",
+        "images": [
+            "/assets/id3/1.JPG",
+            "/assets/id3/2.JPG",
+            "/assets/id3/3.JPG",
+            "/assets/id3/4.JPG",
+            "/assets/id3/5.JPG",
+            "/assets/id3/6.JPG"
+        ]
     }
 ]

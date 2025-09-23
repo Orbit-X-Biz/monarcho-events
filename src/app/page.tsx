@@ -68,7 +68,7 @@ export default function Home() {
               }}
             >
               <Link
-                href="/"
+                href="/contact-us"
                 className="bg-[#926B48] mt-10 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
               >
                 Book Now
@@ -134,7 +134,7 @@ export default function Home() {
                 moments stress-free.
               </p>
               <Link
-                href="/"
+                href="/our-services/life-celebrations"
                 className="bg-[#926B48] sm:mt-8 self-center sm:self-start w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
               >
                 More Info
@@ -170,7 +170,7 @@ export default function Home() {
                 lounge vibe or a large-scale concert.
               </p>
               <Link
-                href="/"
+                href="/our-services/entertainment"
                 className="bg-[#926B48] sm:mt-8 self-center sm:self-start w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
               >
                 More Info
@@ -205,7 +205,7 @@ export default function Home() {
                 storytelling, and tradition in vibrant, unforgettable ways.
               </p>
               <Link
-                href="/"
+                href="/our-services/traditional"
                 className="bg-[#926B48] sm:mt-8 self-center sm:self-start w-fit mb-4 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
               >
                 More Info

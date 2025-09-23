@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 //http://localhost:3000/our-services/traditional
-export default function LifeCelebrationPage() {
+export default function Traditional() {
   return (
     <>
       {/* Blank div for navbar */}
