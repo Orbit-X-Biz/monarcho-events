@@ -14,7 +14,7 @@ export default function ContactUs() {
         <h1 className="text-2xl sm:text-3xl font-semibold text-[#926B48] text-center my-4 sm:mt-8 sm:mb-1">
           Stay Connected
         </h1>
-        <p className="font-[Playfair] font-light italic px-4 text-base text-lg text-center">
+        <p className="font-[Playfair] font-light italic px-4 text-lg text-center">
           Discover our latest events, inspirations, and stories by following us
           across our social platforms , and connect with us to craft your next
           unforgettable celebration.
