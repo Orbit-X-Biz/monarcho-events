@@ -26,7 +26,7 @@
             "/assets/id2/4.jpg",
             "/assets/id2/5.jpg",
             "/assets/id2/6.jpg",
-            "/assets/id2/7.jpg",
+            "/assets/id2/7.JPG",
             "/assets/id2/8.jpg",
             "/assets/id2/9.jpg",
             "/assets/id2/10.jpg",
@@ -55,12 +55,12 @@
     {
         "identifier": "id3",
         "images": [
-            "/assets/id3/1.JPG",
-            "/assets/id3/2.JPG",
-            "/assets/id3/3.JPG",
-            "/assets/id3/4.JPG",
-            "/assets/id3/5.JPG",
-            "/assets/id3/6.JPG"
+            "/assets/id3/1.jpg",
+            "/assets/id3/2.jpg",
+            "/assets/id3/3.jpg",
+            "/assets/id3/4.jpg",
+            "/assets/id3/5.jpg",
+            "/assets/id3/6.jpg"
         ]
     }
 ]
