@@ -97,5 +97,37 @@
             "/assets/id6/4.jpg",
             "/assets/id6/5.jpg"
         ]
+    },
+    {
+        "identifier": "id7",
+        "images": [
+            "/assets/id7/1.jpeg",
+            "/assets/id7/2.jpeg",
+            "/assets/id7/3.jpeg",
+            "/assets/id7/4.jpeg",
+            "/assets/id7/5.jpeg",
+            "/assets/id7/6.jpeg",
+            "/assets/id7/7.jpeg",
+            "/assets/id7/8.jpeg",
+            "/assets/id7/9.jpeg",
+            "/assets/id7/10.jpeg",
+            "/assets/id7/11.jpeg",
+            "/assets/id7/12.jpeg",
+            "/assets/id7/13.jpeg",
+            "/assets/id7/14.jpeg",
+            "/assets/id7/15.jpeg",
+            "/assets/id7/16.jpeg",
+            "/assets/id7/17.jpeg",
+            "/assets/id7/18.jpeg",
+            "/assets/id7/19.jpeg",
+            "/assets/id7/20.jpeg",
+            "/assets/id7/21.jpeg",
+            "/assets/id7/22.jpeg",
+            "/assets/id7/23.jpeg",
+            "/assets/id7/24.jpeg",
+            "/assets/id7/25.jpeg",
+            "/assets/id7/26.jpeg",
+            "/assets/id7/27.jpeg"
+        ]
     }
 ]
