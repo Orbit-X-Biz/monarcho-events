@@ -72,12 +72,20 @@
             "/assets/id4/4.jpg",
             "/assets/id4/5.jpg",
             "/assets/id4/6.jpg",
-            "/assets/id4/7.JPG",
+            "/assets/id4/7.jpg",
             "/assets/id4/8.jpg",
             "/assets/id4/9.jpg",
             "/assets/id4/10.jpg",
             "/assets/id4/11.jpg",
             "/assets/id4/12.jpg"
+        ]
+    },
+        {
+        "identifier": "id5",
+        "images": [
+            "/assets/id5/1.jpg",
+            "/assets/id5/2.jpg",
+            "/assets/id5/3.jpg"
         ]
     }
 ]
