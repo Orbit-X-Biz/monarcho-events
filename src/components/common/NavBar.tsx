@@ -106,7 +106,7 @@ export default function Navbar() {
         </Link>
 
         <Link
-          href="/contact-us"
+          href="/booking"
           className="bg-[#926B48] px-8 py-2 font-semibold text-sm text-white rounded-md cursor-pointer"
         >
           Book Now
@@ -170,7 +170,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="/contact-us"
+                href="/booking"
                 className="bg-[#926B48] px-6 py-2 font-semibold text-xs text-white rounded-md cursor-pointer"
               >
                 Book Now
