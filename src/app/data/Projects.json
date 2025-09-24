@@ -80,12 +80,22 @@
             "/assets/id4/12.jpg"
         ]
     },
-        {
+    {
         "identifier": "id5",
         "images": [
             "/assets/id5/1.jpg",
             "/assets/id5/2.jpg",
             "/assets/id5/3.jpg"
+        ]
+    },
+    {
+        "identifier": "id6",
+        "images": [
+            "/assets/id6/1.jpg",
+            "/assets/id6/2.jpg",
+            "/assets/id6/3.jpg",
+            "/assets/id6/4.jpg",
+            "/assets/id6/5.jpg"
         ]
     }
 ]
