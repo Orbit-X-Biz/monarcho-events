@@ -14,6 +14,28 @@ import { eventTypes } from "@/constants/const";
 //http://localhost:3000/booking
 export default function BookingPage() {
   const titles = ["Mr", "Miss", "Mrs", "Ms", "Dr", "Prof", "Rev"];
+  const venueTypes = [
+    "Beachfront",
+    "Hilltop/Mountain",
+    "Riverside",
+    "Garden",
+    "Historical & Cultural sites",
+    "Yacht",
+    "Banquet",
+    "Poolside",
+    "Resort/Hotels/Boutiques",
+    "Skyline Rooftops",
+    "Waterfalls",
+  ];
+  const guestRanges = [
+    "0 – 25 guests",
+    "25 – 50 guests",
+    "50 – 100 guests",
+    "100 – 250 guests",
+    "250 – 500 guests",
+    "500 – 1000 guests",
+    "1000+ guests",
+  ];
 
   return (
     <>
@@ -100,8 +122,36 @@ export default function BookingPage() {
         </div>
         {/* Date Picker */}
         <div>
-          <Calendar28/>
+          <Calendar28 />
         </div>
+        {/* Preferred Scenery */}
+        <div>
+          <Select>
+            <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px]">
+              <SelectValue placeholder="Preferred Scenery *" />
+            </SelectTrigger>
+            <SelectContent className="border-[#926B48] !text-[#71717A] bg-white text-[10px]">
+              {venueTypes.map((venue) => (
+                <SelectItem key={venue} value={venue}>
+                  {venue}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        {/* Guest count */}
+        <Select>
+          <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px]">
+            <SelectValue placeholder="No of Guests" />
+          </SelectTrigger>
+          <SelectContent className="border-[#926B48] !text-[#71717A] bg-white">
+            {guestRanges.map((range) => (
+              <SelectItem key={range} value={range}>
+                {range}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
     </>
   );
