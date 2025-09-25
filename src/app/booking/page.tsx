@@ -1,11 +1,15 @@
+import { Calendar28 } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { eventTypes } from "@/constants/const";
 
 //http://localhost:3000/booking
 export default function BookingPage() {
@@ -28,7 +32,7 @@ export default function BookingPage() {
       </div>
 
       {/* Booking Form */}
-      <div className="px-5 mt-4 flex flex-col">
+      <div className="px-5 mt-4 flex flex-col space-y-3">
         {/* Name Field */}
         <div className="flex flex-row">
           {/* Designation Dropdown */}
@@ -51,10 +55,52 @@ export default function BookingPage() {
           <div className="w-9/12">
             <Input
               type="text"
-              placeholder="Full Name"
+              placeholder="Full Name *"
               className="w-full border-[#926B48] !text-[#71717A] text-[10px]"
             />
           </div>
+        </div>
+        {/* Email */}
+        <div>
+          <Input
+            type="email"
+            placeholder="Email *"
+            className="w-full border-[#926B48] !text-[#71717A] text-[10px]"
+          />
+        </div>
+        {/* Contact No */}
+        <div>
+          <Input
+            type="number"
+            placeholder="Contact No *"
+            className="w-full border-[#926B48] !text-[#71717A] text-[10px]"
+          />
+        </div>
+        {/* Event Type */}
+        <div>
+          <Select>
+            <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px]">
+              <SelectValue placeholder="Event Type *" />
+            </SelectTrigger>
+            <SelectContent className="bg-white border-[#926B48]">
+              {eventTypes.map((group) => (
+                <SelectGroup key={group.label}>
+                  <SelectLabel className="!text-[#71717A]">
+                    {group.label}
+                  </SelectLabel>
+                  {group.options.map((item) => (
+                    <SelectItem key={item.value} value={item.value}>
+                      {item.label}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        {/* Date Picker */}
+        <div>
+          <Calendar28/>
         </div>
       </div>
     </>
