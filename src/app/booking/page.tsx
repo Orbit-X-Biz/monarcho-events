@@ -73,15 +73,15 @@ export default function BookingPage() {
       </div>
 
       {/* Main Content Container */}
-      <div className="lg:flex lg:max-w-7xl lg:mx-auto lg:gap-8 lg:px-8 sm:py-4">
+      <div className="lg:flex lg:max-w-7xl lg:mx-auto lg:gap-8 lg:px-8 py-3">
         {/* Booking Form */}
-        <div className="px-5 lg:px-0 mt-4 flex flex-col space-y-3 mb-5 lg:flex-1">
+        <div className="px-5 lg:px-0 mt-4 flex flex-col space-y-3 lg:flex-1">
           {/* Name Field */}
           <div className="flex flex-row">
             {/* Designation Dropdown */}
             <div className="w-1/4">
               <Select>
-                <SelectTrigger className="w-11/12 border-[#926B48] !text-[#71717A] text-[10px]">
+                <SelectTrigger className="w-11/12 border-[#926B48] !text-[#71717A] text-[10px] sm:text-sm">
                   <SelectValue className="" placeholder="Title" />
                 </SelectTrigger>
                 <SelectContent className="border-[#926B48] !text-[#71717A] bg-white">
@@ -99,86 +99,95 @@ export default function BookingPage() {
               <Input
                 type="text"
                 placeholder="Full Name *"
-                className="w-full border-[#926B48] !text-[#71717A] text-[10px]"
+                className="w-full border-[#926B48] !text-[#71717A] text-[10px] sm:text-sm"
               />
             </div>
           </div>
-          {/* Email */}
-          <div>
-            <Input
-              type="email"
-              placeholder="Email *"
-              className="w-full border-[#926B48] !text-[#71717A] text-[10px]"
-            />
+          {/* Email and Contact No Row */}
+          <div className="flex flex-col lg:flex-row lg:gap-4 space-y-3 lg:space-y-0">
+            {/* Email */}
+            <div className="lg:flex-1">
+              <Input
+                type="email"
+                placeholder="Email *"
+                className="w-full border-[#926B48] !text-[#71717A] text-[10px] sm:text-sm"
+              />
+            </div>
+            {/* Contact No */}
+            <div className="lg:flex-1">
+              <Input
+                type="number"
+                placeholder="Contact No *"
+                className="w-full border-[#926B48] !text-[#71717A] text-[10px] sm:text-sm"
+              />
+            </div>
           </div>
-          {/* Contact No */}
-          <div>
-            <Input
-              type="number"
-              placeholder="Contact No *"
-              className="w-full border-[#926B48] !text-[#71717A] text-[10px]"
-            />
+          {/* Event Type and Date Row */}
+          <div className="flex flex-col lg:flex-row lg:gap-4 space-y-3 lg:space-y-0">
+            {/* Event Type */}
+            <div className="lg:flex-1">
+              <Select>
+                <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px] sm:text-sm">
+                  <SelectValue placeholder="Event Type *" />
+                </SelectTrigger>
+                <SelectContent className="bg-white border-[#926B48]">
+                  {eventTypes.map((group) => (
+                    <SelectGroup key={group.label}>
+                      <SelectLabel className="!text-[#71717A]">
+                        {group.label}
+                      </SelectLabel>
+                      {group.options.map((item) => (
+                        <SelectItem key={item.value} value={item.value}>
+                          {item.label}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            {/* Date Picker */}
+            <div className="lg:flex-1">
+              <Calendar28 />
+            </div>
           </div>
-          {/* Event Type */}
-          <div>
-            <Select>
-              <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px]">
-                <SelectValue placeholder="Event Type *" />
-              </SelectTrigger>
-              <SelectContent className="bg-white border-[#926B48]">
-                {eventTypes.map((group) => (
-                  <SelectGroup key={group.label}>
-                    <SelectLabel className="!text-[#71717A]">
-                      {group.label}
-                    </SelectLabel>
-                    {group.options.map((item) => (
-                      <SelectItem key={item.value} value={item.value}>
-                        {item.label}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          {/* Date Picker */}
-          <div>
-            <Calendar28 />
-          </div>
-          {/* Preferred Scenery */}
-          <div>
-            <Select>
-              <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px]">
-                <SelectValue placeholder="Preferred Scenery *" />
-              </SelectTrigger>
-              <SelectContent className="border-[#926B48] !text-[#71717A] bg-white text-[10px]">
-                {venueTypes.map((venue) => (
-                  <SelectItem key={venue} value={venue}>
-                    {venue}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          {/* Guest count */}
-          <div>
-            <Select>
-              <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px]">
-                <SelectValue placeholder="No of Guests" />
-              </SelectTrigger>
-              <SelectContent className="border-[#926B48] !text-[#71717A] bg-white">
-                {guestRanges.map((range) => (
-                  <SelectItem key={range} value={range}>
-                    {range}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          {/* Preferred Scenery and Guest Count Row */}
+          <div className="flex flex-col lg:flex-row lg:gap-4 space-y-3 lg:space-y-0">
+            {/* Preferred Scenery */}
+            <div className="lg:flex-1">
+              <Select>
+                <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px] sm:text-sm">
+                  <SelectValue placeholder="Preferred Scenery *" />
+                </SelectTrigger>
+                <SelectContent className="border-[#926B48] !text-[#71717A] bg-white text-[10px] sm:text-sm">
+                  {venueTypes.map((venue) => (
+                    <SelectItem key={venue} value={venue}>
+                      {venue}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            {/* Guest count */}
+            <div className="lg:flex-1">
+              <Select>
+                <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px] sm:text-sm">
+                  <SelectValue placeholder="No of Guests" />
+                </SelectTrigger>
+                <SelectContent className="border-[#926B48] !text-[#71717A] bg-white">
+                  {guestRanges.map((range) => (
+                    <SelectItem key={range} value={range}>
+                      {range}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
           {/* Preferred Style */}
           <div>
             <Select>
-              <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px]">
+              <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px] sm:text-sm">
                 <SelectValue placeholder="Preferred Style" />
               </SelectTrigger>
               <SelectContent className="border-[#926B48] !text-[#71717A] bg-white">
@@ -192,8 +201,10 @@ export default function BookingPage() {
           </div>
           {/* Additional Services */}
           <div>
-            <p className="font-light text-xs mb-2">Additional Services</p>
-            <div className="grid grid-cols-2 gap-2 pl-2">
+            <p className="font-light text-xs sm:text-sm mb-2">
+              Additional Services
+            </p>
+            <div className="grid grid-cols-2 gap-2 pl-2 sm:pl-5">
               {services.map((service) => (
                 <div key={service} className="flex flex-col space-y-1">
                   <div className="flex items-center space-x-2">
@@ -205,7 +216,10 @@ export default function BookingPage() {
                         }
                       }}
                     />
-                    <Label htmlFor={service} className="text-xs font-light">
+                    <Label
+                      htmlFor={service}
+                      className="text-xs sm:text-sm font-light"
+                    >
                       {service}
                     </Label>
                   </div>
@@ -213,7 +227,7 @@ export default function BookingPage() {
                     <input
                       type="text"
                       placeholder="Please specify"
-                      className="mt-1 w-full rounded-md border border-[#926B48] px-2 py-1 text-[10px] !text-[#71717A] focus:outline-none"
+                      className="mt-1 w-full rounded-md border border-[#926B48] px-2 py-1 text-[10px] sm:text-sm !text-[#71717A] focus:outline-none"
                     />
                   )}
                 </div>
@@ -223,15 +237,15 @@ export default function BookingPage() {
           {/* Additional Notes */}
           <div className="h-28">
             <Textarea
-              className="border-[#926B48] !text-[#71717A] text-[10px] h-full"
+              className="border-[#926B48] !text-[#71717A] text-[10px] sm:text-sm h-full"
               placeholder="Additional Notes"
             />
           </div>
           {/* Book now */}
-          <div>
+          <div className="flex lg:justify-end sm:mt-2">
             <Button
               variant="outline"
-              className="w-full border-[#926B48] font-semibold text-[#926B48] text-xs"
+              className="w-full cursor-pointer lg:w-auto lg:px-8 border-[#926B48] font-semibold text-[#926B48] text-xs sm:text-sm"
             >
               Book Now
             </Button>
@@ -239,7 +253,7 @@ export default function BookingPage() {
         </div>
 
         {/* Image Banner - Only visible on desktop */}
-        <div className="hidden lg:block lg:flex-1 py-3">
+        <div className="hidden lg:block lg:flex-1 py-4">
           <img
             src="/assets/booking-bg.png"
             alt="Event booking background"
