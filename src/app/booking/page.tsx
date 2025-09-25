@@ -36,6 +36,14 @@ export default function BookingPage() {
     "500 – 1000 guests",
     "1000+ guests",
   ];
+  const themes = [
+  "Boho",
+  "Exotic",
+  "Traditional",
+  "Luxury",
+  "Indian",
+];
+
 
   return (
     <>
@@ -140,18 +148,35 @@ export default function BookingPage() {
           </Select>
         </div>
         {/* Guest count */}
-        <Select>
-          <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px]">
-            <SelectValue placeholder="No of Guests" />
-          </SelectTrigger>
-          <SelectContent className="border-[#926B48] !text-[#71717A] bg-white">
-            {guestRanges.map((range) => (
-              <SelectItem key={range} value={range}>
-                {range}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <div>
+          <Select>
+            <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px]">
+              <SelectValue placeholder="No of Guests" />
+            </SelectTrigger>
+            <SelectContent className="border-[#926B48] !text-[#71717A] bg-white">
+              {guestRanges.map((range) => (
+                <SelectItem key={range} value={range}>
+                  {range}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+        {/* Preferred Style */}
+        <div>
+          <Select>
+            <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px]">
+              <SelectValue placeholder="Preferred Style" />
+            </SelectTrigger>
+            <SelectContent className="border-[#926B48] !text-[#71717A] bg-white">
+              {themes.map((range) => (
+                <SelectItem key={range} value={range}>
+                  {range}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
       </div>
     </>
   );
