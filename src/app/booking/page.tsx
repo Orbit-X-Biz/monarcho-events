@@ -1,5 +1,9 @@
+"use client";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Calendar28 } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -9,7 +13,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import { eventTypes } from "@/constants/const";
+import { useState } from "react";
 
 //http://localhost:3000/booking
 export default function BookingPage() {
@@ -36,15 +42,19 @@ export default function BookingPage() {
     "500 – 1000 guests",
     "1000+ guests",
   ];
-  const themes = [
-  "Boho",
-  "Exotic",
-  "Traditional",
-  "Luxury",
-  "Indian",
-];
+  const themes = ["Boho", "Exotic", "Traditional", "Luxury", "Indian"];
 
-
+  const services = [
+    "Catering",
+    "Entertainment",
+    "Decor & Styling",
+    "Venue Booking",
+    "Photography",
+    "Transportation",
+    "Videography",
+    "Other",
+  ];
+  const [showOther, setShowOther] = useState(false);
   return (
     <>
       {/* Blank div for navbar */}
@@ -62,7 +72,7 @@ export default function BookingPage() {
       </div>
 
       {/* Booking Form */}
-      <div className="px-5 mt-4 flex flex-col space-y-3">
+      <div className="px-5 mt-4 flex flex-col space-y-3 mb-5">
         {/* Name Field */}
         <div className="flex flex-row">
           {/* Designation Dropdown */}
@@ -71,7 +81,7 @@ export default function BookingPage() {
               <SelectTrigger className="w-11/12 border-[#926B48] !text-[#71717A] text-[10px]">
                 <SelectValue className="" placeholder="Title" />
               </SelectTrigger>
-              <SelectContent className="border-[#926B48] !text-[#71717A]">
+              <SelectContent className="border-[#926B48] !text-[#71717A] bg-white">
                 {titles.map((title) => (
                   <SelectItem key={title} value={title}>
                     {title}
@@ -176,6 +186,52 @@ export default function BookingPage() {
               ))}
             </SelectContent>
           </Select>
+        </div>
+        {/* Additional Services */}
+        <div>
+          <p className="font-light text-xs mb-2">Additional Services</p>
+          <div className="grid grid-cols-2 gap-2 pl-2">
+            {services.map((service) => (
+              <div key={service} className="flex flex-col space-y-1">
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id={service}
+                    onCheckedChange={(checked) => {
+                      if (service === "Other") {
+                        setShowOther(!!checked);
+                      }
+                    }}
+                  />
+                  <Label htmlFor={service} className="text-xs font-light">
+                    {service}
+                  </Label>
+                </div>
+                {service === "Other" && showOther && (
+                  <input
+                    type="text"
+                    placeholder="Please specify"
+                    className="mt-1 w-full rounded-md border border-[#926B48] px-2 py-1 text-[10px] !text-[#71717A] focus:outline-none"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Additional Notes */}
+        <div className="h-28">
+          <Textarea
+            className="border-[#926B48] !text-[#71717A] text-[10px] h-full"
+            placeholder="Additional Notes"
+          />
+        </div>
+        {/* Book now */}
+        <div>
+          <Button
+            variant="outline"
+            className="w-full border-[#926B48] font-semibold text-[#926B48] text-xs"
+          >
+            Book Now
+          </Button>
         </div>
       </div>
     </>
