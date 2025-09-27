@@ -17,6 +17,7 @@ const bookingSchema = new mongoose.Schema(
     notes: { type: String }, // Optional free text
 
     dateOfCreation: { type: Date, default: Date.now }, // Auto set when created
+    status: {type: String, default: "TODO"}
   },
   { timestamps: true } // Adds createdAt & updatedAt automatically
 );
