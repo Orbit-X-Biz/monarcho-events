@@ -64,7 +64,8 @@ export default async function handler(
         services: booking.services,
         notes: booking.notes,
         createdAt: booking.createdAt,
-        updatedAt: booking.updatedAt
+        updatedAt: booking.updatedAt,
+        status: booking.status
       }));
 
       return res.status(200).json({
