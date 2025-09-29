@@ -1,80 +1,378 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { useAuth } from "@/hooks/useAuth";
-import { Button } from "@/components/ui/button";
+
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronsLeftIcon,
+  ChevronsRightIcon,
+  Eye,
+} from "lucide-react";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  AlertDialog,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import { AlertDialogTrigger } from "@radix-ui/react-alert-dialog";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-export default function AdminDashboard() {
-  const { user, loading, logout } = useAuth(true);
+interface Booking {
+  id: string;
+  name: string;
+  email: string;
+  contactNo: string;
+  eventType: string;
+  dateOfEvent: string;
+  scenery: string;
+  noOfGuests: number;
+  style: string;
+  services: string[];
+  notes: string;
+  createdAt: string;
+  updatedAt: string;
+  status: string;
+}
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#926B48] mx-auto"></div>
-          <p className="mt-4 text-zinc-600">Loading...</p>
-        </div>
-      </div>
-    );
-  }
+export default function BookingDashboard() {
+  const tableHeaders = [
+    "Name",
+    "Event Type",
+    "Contact No",
+    "Email",
+    "Tentative Date",
+    "Date Registered",
+    "Location",
+    "Status",
+    "Actions",
+  ];
 
-  if (!user) {
-    return null; // Will redirect to login
-  }
+  const router = useRouter();
+  const [bookings, setBookings] = useState<Booking[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [filterText, setFilterText] = useState("");
+  const [totalPages, setTotalPages] = useState(1);
 
-  const handleLogout = () => {
-    toast.success("Logged out successfully");
-    logout();
+  const token =
+    typeof window !== "undefined" ? localStorage.getItem("auth_token") : null;
+  const auth_user =
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("auth_user") || "null")
+      : null;
+
+  useEffect(() => {
+    if (!token) {
+      router.replace("/admin/login"); // redirect if not logged in
+    }
+  }, [token]);
+
+  const fetchBookings = async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch(
+        `/api/admin/viewBookings?page=${currentPage}&limit=${rowsPerPage}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData.message || "Failed to fetch bookings");
+      }
+      const data = await res.json();
+      setBookings(data.data.bookings);
+      setTotalPages(data.data.pagination.totalPages);
+    } catch (err: any) {
+      setError(err.message || "Failed to load bookings");
+    } finally {
+      setLoading(false);
+    }
   };
 
+  useEffect(() => {
+    fetchBookings();
+  }, [currentPage, rowsPerPage]);
+
+  const filteredBookings = bookings.filter((b) => {
+    const search = filterText.toLowerCase();
+    return (
+      b.name.toLowerCase().includes(search) ||
+      b.email.toLowerCase().includes(search) ||
+      b.contactNo.toLowerCase().includes(search) ||
+      b.eventType.toLowerCase().includes(search)
+    );
+  });
+
+  const startIndex = (currentPage - 1) * rowsPerPage;
+  const endIndex = startIndex + rowsPerPage;
+  const paginatedBookings = filteredBookings.slice(startIndex, endIndex);
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-2xl font-bold text-zinc-900">
-                Admin Dashboard
-              </h1>
-              <p className="text-sm text-zinc-600 mt-1">
-                Welcome back, {user.name}!
-              </p>
-            </div>
-            <Button
-              onClick={handleLogout}
-              variant="outline"
-              className="border-[#926B48] text-[#926B48] hover:bg-[#926B48] hover:text-white"
-            >
-              Logout
-            </Button>
-          </div>
-        </div>
-      </header>
+    <>
+      {/* Blank div for navbar */}
+      <div className="h-20 sm:h-24"></div>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-xl font-semibold mb-4">User Information</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <p className="text-sm text-zinc-600">Email</p>
-              <p className="font-medium">{user.email}</p>
-            </div>
-            <div>
-              <p className="text-sm text-zinc-600">Role</p>
-              <p className="font-medium capitalize">{user.role}</p>
-            </div>
-            <div>
-              <p className="text-sm text-zinc-600">Last Login</p>
-              <p className="font-medium">
-                {new Date(user.lastLogin).toLocaleString()}
-              </p>
-            </div>
-          </div>
+      <div className="font-[Poppins] px-10 py-2">
+        <div className="flex flex-row justify-between items-center w-full my-5">
+          <p className="font-medium text-[#926B48] text-2xl">
+            Welcome Back, {auth_user?.name || "Admin"}
+          </p>
+          <Button
+            onClick={() => {
+              localStorage.removeItem("auth_token");
+              localStorage.removeItem("auth_user")
+              router.push("/admin/login");
+            }}
+            className="bg-red-600 text-white cursor-pointer"
+          >
+            Logout
+          </Button>
         </div>
 
-        {/* Add your dashboard content here */}
-      </main>
-    </div>
+        {/* Filter */}
+        <div className="flex flex-row mt-2">
+          <Input
+            placeholder="Filter bookings..."
+            className="border border-[#926B48] w-1/5 !text-xs text-zinc-600 font-medium"
+            value={filterText}
+            onChange={(e) => {
+              setFilterText(e.target.value);
+              setCurrentPage(1);
+            }}
+          />
+        </div>
+
+        {/* Table */}
+        <div className="mt-2 rounded-[6px] border-[1px] border-zinc-200 overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead className="text-left">
+              <tr>
+                {tableHeaders.map((header) => (
+                  <th
+                    key={header}
+                    className="px-4 py-3 border-b-[1px] border-zinc-200 text-zinc-500 font-normal"
+                  >
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {loading ? (
+                <tr>
+                  <td
+                    colSpan={8}
+                    className="text-center py-4 text-black font-semibold"
+                  >
+                    Loading bookings...
+                  </td>
+                </tr>
+              ) : error ? (
+                <tr>
+                  <td
+                    colSpan={8}
+                    className="text-center py-4 text-red-500 font-semibold"
+                  >
+                    {error}
+                  </td>
+                </tr>
+              ) : paginatedBookings.length === 0 ? (
+                <tr>
+                  <td
+                    colSpan={8}
+                    className="text-center py-4 text-zinc-500 font-semibold"
+                  >
+                    No bookings found.
+                  </td>
+                </tr>
+              ) : (
+                paginatedBookings.map((row) => (
+                  <tr key={row.id}>
+                    <td className="px-4 py-3 text-zinc-950">{row.name}</td>
+                    <td className="px-4 py-3 text-zinc-950">{row.eventType}</td>
+                    <td className="px-4 py-3 text-zinc-950">{row.contactNo}</td>
+                    <td className="px-4 py-3 text-zinc-950">{row.email}</td>
+                    <td className="px-4 py-3 text-zinc-950">
+                      {new Date(row.dateOfEvent).toLocaleDateString()}
+                    </td>
+                    <td className="px-4 py-3 text-zinc-950">
+                      {new Date(row.createdAt).toLocaleDateString()}
+                    </td>
+                    <td className="px-4 py-3 text-zinc-950">{row.scenery}</td>
+                    <td className="px-4 py-3 text-zinc-950 font-medium">
+                      {row.status === "TODO" ? (
+                        <span className="px-6 py-1 rounded-none text-sm font-medium bg-gray-300 text-black">
+                          Todo
+                        </span>
+                      ) : row.status === "DONE" ? (
+                        <span className="px-6 py-1 rounded-none text-sm font-medium bg-[#38A169] text-black">
+                          Done
+                        </span>
+                      ) : row.status === "ONGOING" ? (
+                        <span className="px-3 py-1 rounded-none text-sm font-medium bg-[#3182CE] text-black">
+                          Ongoing
+                        </span>
+                      ) : (
+                        row.status
+                      )}
+                    </td>
+                    <td className="px-4 py-3 flex items-center gap-2">
+                      <AlertDialog>
+                        <AlertDialogTrigger asChild>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="flex items-center gap-1"
+                          >
+                            <Eye className="w-4 h-4" />
+                            View
+                          </Button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent className="bg-white border-0 max-w-lg mx-auto font-[Poppins]">
+                          <AlertDialogTitle className="text-lg font-semibold mb-4 text-center">
+                            Booking Details
+                          </AlertDialogTitle>
+                          <div className="grid grid-cols-2 gap-2">
+                            <p>
+                              <strong>Name:</strong> {row.name}
+                            </p>
+                            <p>
+                              <strong>Email:</strong> {row.email}
+                            </p>
+                            <p>
+                              <strong>Contact:</strong> {row.contactNo}
+                            </p>
+                            <p>
+                              <strong>Event Type:</strong> {row.eventType}
+                            </p>
+                            <p>
+                              <strong>Tentative Date:</strong>{" "}
+                              {new Date(row.dateOfEvent).toLocaleDateString()}
+                            </p>
+                            <p>
+                              <strong>Date Registered:</strong>{" "}
+                              {new Date(row.createdAt).toLocaleDateString()}
+                            </p>
+                            <p>
+                              <strong>Scenery:</strong> {row.scenery}
+                            </p>
+                            <p>
+                              <strong>No of Guests:</strong> {row.noOfGuests}
+                            </p>
+                            <p>
+                              <strong>Style:</strong> {row.style}
+                            </p>
+                            <p>
+                              <strong>Services:</strong>{" "}
+                              {row.services.join(", ")}
+                            </p>
+                            <p>
+                              <strong>Notes:</strong> {row.notes}
+                            </p>
+                            <p>
+                              <strong>Status:</strong> {row.status}
+                            </p>
+                          </div>
+                          <div className="mt-4 flex justify-center">
+                            <AlertDialogCancel asChild>
+                              <Button variant="outline">Close</Button>
+                            </AlertDialogCancel>
+                          </div>
+                        </AlertDialogContent>
+                      </AlertDialog>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Pagination Controls */}
+        <div className="flex items-center justify-end my-4 px-2">
+          <div className="flex w-full items-center gap-8 lg:w-fit">
+            <div className="hidden items-center gap-2 lg:flex">
+              <Label htmlFor="rows-per-page" className="text-sm font-medium">
+                Rows per page
+              </Label>
+              <Select
+                value={`${rowsPerPage}`}
+                onValueChange={(value) => {
+                  setRowsPerPage(Number(value));
+                  setCurrentPage(1);
+                }}
+              >
+                <SelectTrigger
+                  className="w-20 border-[1px] border-zinc-200 cursor-pointer"
+                  id="rows-per-page"
+                >
+                  <SelectValue placeholder="" />
+                </SelectTrigger>
+                <SelectContent className="bg-white !text-xl" side="top">
+                  {[10, 20, 30, 40, 50].map((pageSize) => (
+                    <SelectItem
+                      className="!text-xl"
+                      key={pageSize}
+                      value={`${pageSize}`}
+                    >
+                      {pageSize}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="flex w-fit items-center justify-center text-sm font-medium">
+              Page {currentPage} of {totalPages}
+            </div>
+            <div className="ml-auto flex items-center gap-2 lg:ml-0">
+              <Button
+                onClick={() => setCurrentPage(1)}
+                disabled={currentPage === 1}
+              >
+                <ChevronsLeftIcon />
+              </Button>
+              <Button
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+              >
+                <ChevronLeftIcon />
+              </Button>
+              <Button
+                onClick={() =>
+                  setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                }
+                disabled={currentPage === totalPages}
+              >
+                <ChevronRightIcon />
+              </Button>
+              <Button
+                onClick={() => setCurrentPage(totalPages)}
+                disabled={currentPage === totalPages}
+              >
+                <ChevronsRightIcon />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
