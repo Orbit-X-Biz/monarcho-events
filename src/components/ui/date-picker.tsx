@@ -6,7 +6,6 @@ import { CalendarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Popover,
   PopoverContent,
@@ -14,10 +13,7 @@ import {
 } from "@/components/ui/popover";
 
 function formatDate(date: Date | undefined) {
-  if (!date) {
-    return "";
-  }
-
+  if (!date) return "";
   return date.toLocaleDateString("en-US", {
     day: "2-digit",
     month: "long",
@@ -26,23 +22,27 @@ function formatDate(date: Date | undefined) {
 }
 
 function isValidDate(date: Date | undefined) {
-  if (!date) {
-    return false;
-  }
+  if (!date) return false;
   return !isNaN(date.getTime());
 }
 
-export function Calendar28() {
+interface Calendar28Props {
+  date: Date | undefined;
+  setDate: (date: Date | undefined) => void;
+}
+
+export function Calendar28({ date, setDate }: Calendar28Props) {
   const [open, setOpen] = React.useState(false);
-  const [date, setDate] = React.useState<Date | undefined>(new Date());
-  const [month, setMonth] = React.useState<Date | undefined>(new Date());
-  const [value, setValue] = React.useState(formatDate(new Date()));
+  const [month, setMonth] = React.useState<Date | undefined>(date);
+  const [value, setValue] = React.useState(formatDate(date));
+
+  React.useEffect(() => {
+    setValue(formatDate(date));
+    setMonth(date);
+  }, [date]);
 
   return (
     <div className="flex flex-col gap-3">
-      {/* <Label htmlFor="date" className="px-1">
-        Subscription Date
-      </Label> */}
       <div className="relative flex gap-2">
         <Input
           id="date"
@@ -50,11 +50,11 @@ export function Calendar28() {
           placeholder="Tentative Date"
           className="bg-background pr-10 border-[#926B48] !text-[#71717A] text-[10px]"
           onChange={(e) => {
-            const date = new Date(e.target.value);
+            const newDate = new Date(e.target.value);
             setValue(e.target.value);
-            if (isValidDate(date)) {
-              setDate(date);
-              setMonth(date);
+            if (isValidDate(newDate)) {
+              setDate(newDate);
+              setMonth(newDate);
             }
           }}
           onKeyDown={(e) => {
@@ -88,9 +88,9 @@ export function Calendar28() {
               captionLayout="dropdown"
               month={month}
               onMonthChange={setMonth}
-              onSelect={(date) => {
-                setDate(date);
-                setValue(formatDate(date));
+              onSelect={(newDate) => {
+                setDate(newDate);
+                setValue(formatDate(newDate));
                 setOpen(false);
               }}
             />
