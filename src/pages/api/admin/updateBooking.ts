@@ -9,7 +9,7 @@ import { authMiddleware, requireRole } from "@/middleware/auth";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Valid status values
-const VALID_STATUSES = ["DONE", "ONGOING"] as const;
+const VALID_STATUSES = ["DONE", "ONGOING", "TODO"] as const;
 type BookingStatus = (typeof VALID_STATUSES)[number];
 
 // Validation helper function

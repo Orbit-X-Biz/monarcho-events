@@ -70,6 +70,10 @@ export default function BookingDashboard() {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [filterText, setFilterText] = useState("");
   const [totalPages, setTotalPages] = useState(1);
+  const [selectedStatus, setSelectedStatus] = useState<string | undefined>(
+    undefined
+  );
+  const [updating, setUpdating] = useState(false);
 
   const token =
     typeof window !== "undefined" ? localStorage.getItem("auth_token") : null;
@@ -295,6 +299,7 @@ export default function BookingDashboard() {
                             variant="ghost"
                             size="sm"
                             className="flex items-center gap-1"
+                            onClick={() => setSelectedStatus(row.status)}
                           >
                             <Eye className="w-4 h-4" />
                             View
@@ -406,14 +411,14 @@ export default function BookingDashboard() {
                               </div>
                             </div>
 
-                            {/* Status Dropdown */}
+                            {/* Status Dropdown with API call */}
                             <div className="flex items-center gap-2">
                               <p className="font-medium">Status:</p>
                               <select
                                 className="border border-zinc-500 text-[#71717A] px-2 py-1 rounded w-1/2"
-                                value={row.status}
+                                value={selectedStatus}
                                 onChange={(e) =>
-                                  console.log("New Status:", e.target.value)
+                                  setSelectedStatus(e.target.value)
                                 }
                               >
                                 <option value="TODO">Todo</option>
@@ -424,8 +429,58 @@ export default function BookingDashboard() {
 
                             {/* Buttons */}
                             <div className="flex justify-center gap-4 pt-4">
-                              <Button className="bg-green-600 text-white hover:bg-green-700">
-                                Update
+                              <Button
+                                className="bg-green-600 text-white hover:bg-green-700"
+                                disabled={updating}
+                                onClick={async () => {
+                                  setUpdating(true);
+                                  try {
+                                    const res = await fetch(
+                                      "/api/admin/updateBooking",
+                                      {
+                                        method: "PUT",
+                                        headers: {
+                                          "Content-Type": "application/json",
+                                          Authorization: `Bearer ${token}`,
+                                        },
+                                        body: JSON.stringify({
+                                          id: row.id,
+                                          status: selectedStatus,
+                                        }),
+                                      }
+                                    );
+                                    const data = await res.json();
+
+                                    if (res.ok) {
+                                      toast.success(
+                                        data.message ||
+                                          "Booking updated successfully!"
+                                      );
+                                      // Update local table state
+                                      setBookings((prev) =>
+                                        prev.map((b) =>
+                                          b._id === row._id
+                                            ? { ...b, status: selectedStatus ?? b.status }
+                                            : b
+                                        )
+                                      );
+                                    } else {
+                                      toast.error(
+                                        data.message ||
+                                          "Failed to update booking."
+                                      );
+                                    }
+                                  } catch (err: any) {
+                                    toast.error(
+                                      err.message || "Something went wrong."
+                                    );
+                                  } finally {
+                                    setUpdating(false);
+                                    fetchBookings()
+                                  }
+                                }}
+                              >
+                                {updating ? "Updating..." : "Update"}
                               </Button>
                               <AlertDialogCancel asChild>
                                 <Button variant="outline">Cancel</Button>
