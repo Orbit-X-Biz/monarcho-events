@@ -8,6 +8,7 @@ import {
   ChevronRightIcon,
   ChevronsLeftIcon,
   ChevronsRightIcon,
+  Download,
   Eye,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -28,8 +29,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import jsPDF from "jspdf";
 
 interface Booking {
+  [x: string]: any;
   id: string;
   name: string;
   email: string;
@@ -124,6 +127,57 @@ export default function BookingDashboard() {
   const startIndex = (currentPage - 1) * rowsPerPage;
   const endIndex = startIndex + rowsPerPage;
   const paginatedBookings = filteredBookings.slice(startIndex, endIndex);
+
+  const downloadPDF = (row: any) => {
+    const doc = new jsPDF();
+
+    const logo = "/assets/logo.png";
+    doc.addImage(logo, "PNG", 10, 10, 50, 40);
+
+    // Title
+    doc.setFontSize(18);
+    doc.text("Event Details Receipt", 10, 60);
+
+    // Content Formatting
+    doc.setFontSize(12);
+    let y = 75; // vertical offset
+
+    const addLine = (label: string, value: string | number) => {
+      doc.text(`${label}: ${value || "N/A"}`, 10, y);
+      y += 8;
+    };
+
+    addLine("Name", row.name);
+    addLine("Email", row.email);
+    addLine("Contact No", row.contactNo);
+    addLine("Event Type", row.eventType);
+    addLine("Tentative Date", new Date(row.dateOfEvent).toLocaleDateString());
+    addLine("Scenery", row.scenery);
+    addLine("No. of Guests", row.noOfGuests);
+    addLine("Style", row.style);
+    addLine("Status", row.status);
+
+    // Services List
+    doc.text("Selected Services:", 10, y);
+    y += 6;
+    row.services.forEach((service: string) => {
+      doc.text(`• ${service}`, 15, y);
+      y += 6;
+    });
+
+    // Notes
+    y += 4;
+    doc.text("Notes:", 10, y);
+    y += 6;
+    const splitNotes = doc.splitTextToSize(
+      row.notes || "No notes provided.",
+      180
+    );
+    doc.text(splitNotes, 10, y);
+
+    // Save
+    doc.save(`event-${row._id}.pdf`);
+  };
 
   return (
     <>
@@ -248,65 +302,91 @@ export default function BookingDashboard() {
                         </AlertDialogTrigger>
 
                         <AlertDialogContent className="bg-white border-0 w-4/5 font-[Poppins]">
-                          <AlertDialogTitle className="text-2xl text-[#926B48] font-medium mb-4 text-center">
-                            Event Details
-                          </AlertDialogTitle>
+                          {/* Header with Title & Download Button */}
+                          <div className="flex justify-between items-center mb-4">
+                            <div></div>
+                            <AlertDialogTitle className="text-2xl text-[#926B48] text-center font-medium">
+                              Event Details
+                            </AlertDialogTitle>
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              className="cursor-pointer"
+                              onClick={() => downloadPDF(row)}
+                            >
+                              <Download className="w-5 h-5 text-black" />
+                            </Button>
+                          </div>
 
-                          <div className="text-xs space-y-3 font-light">
+                          <div
+                            id={`event-details-${row._id}`}
+                            className="text-xs space-y-3 font-light"
+                          >
                             {/* Row 1 */}
                             <div className="grid grid-cols-2 gap-4">
                               <p>
-                                <span className="font-medium">Name:</span> {row.name}
+                                <span className="font-medium">Name:</span>{" "}
+                                {row.name}
                               </p>
                               <p>
-                                <span className="font-medium">Email:</span> {row.email}
+                                <span className="font-medium">Email:</span>{" "}
+                                {row.email}
                               </p>
                             </div>
 
                             {/* Row 2 */}
                             <div className="grid grid-cols-2 gap-2">
                               <p>
-                                <span className="font-medium">Contact No:</span> {row.contactNo}
+                                <span className="font-medium">Contact No:</span>{" "}
+                                {row.contactNo}
                               </p>
                               <p>
-                                <span className="font-medium">Type:</span> {row.eventType}
+                                <span className="font-medium">Type:</span>{" "}
+                                {row.eventType}
                               </p>
                             </div>
 
                             {/* Row 3 */}
                             <div className="grid grid-cols-2 gap-2">
                               <p>
-                                <span className="font-medium">Tentative Date:</span>{" "}
+                                <span className="font-medium">
+                                  Tentative Date:
+                                </span>{" "}
                                 {new Date(row.dateOfEvent).toLocaleDateString()}
                               </p>
                               <p>
-                                <span className="font-medium">Scenery:</span> {row.scenery}
+                                <span className="font-medium">Scenery:</span>{" "}
+                                {row.scenery}
                               </p>
                             </div>
 
                             {/* Row 4 */}
                             <div className="grid grid-cols-2 gap-2">
                               <p>
-                                <span className="font-medium">No. of Guests:</span> {row.noOfGuests}
+                                <span className="font-medium">
+                                  No. of Guests:
+                                </span>{" "}
+                                {row.noOfGuests}
                               </p>
                               <p>
-                                <span className="font-medium">Style:</span> {row.style}
+                                <span className="font-medium">Style:</span>{" "}
+                                {row.style}
                               </p>
                             </div>
 
                             {/* Registered Date */}
                             <div>
                               <p>
-                                <span className="font-medium">Date Registered:</span>{" "}
+                                <span className="font-medium">
+                                  Date Registered:
+                                </span>{" "}
                                 {new Date(row.createdAt).toLocaleDateString()}
                               </p>
                             </div>
 
                             {/* Services */}
                             <div>
-                              <p className="font-medium">
-                                Selected Services:
-                              </p>
+                              <p className="font-medium">Selected Services:</p>
                               <div>
                                 <ul className="pl-6 text-black">
                                   {row.services.map(
@@ -383,7 +463,7 @@ export default function BookingDashboard() {
                   <SelectValue placeholder="" />
                 </SelectTrigger>
                 <SelectContent className="bg-white !text-xl" side="top">
-                  {[10, 20, 30, 40, 50].map((pageSize) => (
+                  {[1, 2, 10, 20, 30, 40, 50].map((pageSize) => (
                     <SelectItem
                       className="!text-xl"
                       key={pageSize}
