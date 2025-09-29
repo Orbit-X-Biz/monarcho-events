@@ -138,7 +138,7 @@ export default function BookingDashboard() {
           <Button
             onClick={() => {
               localStorage.removeItem("auth_token");
-              localStorage.removeItem("auth_user")
+              localStorage.removeItem("auth_user");
               router.push("/admin/login");
             }}
             className="bg-red-600 text-white cursor-pointer"
@@ -246,55 +246,111 @@ export default function BookingDashboard() {
                             View
                           </Button>
                         </AlertDialogTrigger>
-                        <AlertDialogContent className="bg-white border-0 max-w-lg mx-auto font-[Poppins]">
-                          <AlertDialogTitle className="text-lg font-semibold mb-4 text-center">
-                            Booking Details
+
+                        <AlertDialogContent className="bg-white border-0 w-4/5 font-[Poppins]">
+                          <AlertDialogTitle className="text-2xl text-[#926B48] font-medium mb-4 text-center">
+                            Event Details
                           </AlertDialogTitle>
-                          <div className="grid grid-cols-2 gap-2">
-                            <p>
-                              <strong>Name:</strong> {row.name}
-                            </p>
-                            <p>
-                              <strong>Email:</strong> {row.email}
-                            </p>
-                            <p>
-                              <strong>Contact:</strong> {row.contactNo}
-                            </p>
-                            <p>
-                              <strong>Event Type:</strong> {row.eventType}
-                            </p>
-                            <p>
-                              <strong>Tentative Date:</strong>{" "}
-                              {new Date(row.dateOfEvent).toLocaleDateString()}
-                            </p>
-                            <p>
-                              <strong>Date Registered:</strong>{" "}
-                              {new Date(row.createdAt).toLocaleDateString()}
-                            </p>
-                            <p>
-                              <strong>Scenery:</strong> {row.scenery}
-                            </p>
-                            <p>
-                              <strong>No of Guests:</strong> {row.noOfGuests}
-                            </p>
-                            <p>
-                              <strong>Style:</strong> {row.style}
-                            </p>
-                            <p>
-                              <strong>Services:</strong>{" "}
-                              {row.services.join(", ")}
-                            </p>
-                            <p>
-                              <strong>Notes:</strong> {row.notes}
-                            </p>
-                            <p>
-                              <strong>Status:</strong> {row.status}
-                            </p>
-                          </div>
-                          <div className="mt-4 flex justify-center">
-                            <AlertDialogCancel asChild>
-                              <Button variant="outline">Close</Button>
-                            </AlertDialogCancel>
+
+                          <div className="text-xs space-y-3 font-light">
+                            {/* Row 1 */}
+                            <div className="grid grid-cols-2 gap-4">
+                              <p>
+                                <span className="font-medium">Name:</span> {row.name}
+                              </p>
+                              <p>
+                                <span className="font-medium">Email:</span> {row.email}
+                              </p>
+                            </div>
+
+                            {/* Row 2 */}
+                            <div className="grid grid-cols-2 gap-2">
+                              <p>
+                                <span className="font-medium">Contact No:</span> {row.contactNo}
+                              </p>
+                              <p>
+                                <span className="font-medium">Type:</span> {row.eventType}
+                              </p>
+                            </div>
+
+                            {/* Row 3 */}
+                            <div className="grid grid-cols-2 gap-2">
+                              <p>
+                                <span className="font-medium">Tentative Date:</span>{" "}
+                                {new Date(row.dateOfEvent).toLocaleDateString()}
+                              </p>
+                              <p>
+                                <span className="font-medium">Scenery:</span> {row.scenery}
+                              </p>
+                            </div>
+
+                            {/* Row 4 */}
+                            <div className="grid grid-cols-2 gap-2">
+                              <p>
+                                <span className="font-medium">No. of Guests:</span> {row.noOfGuests}
+                              </p>
+                              <p>
+                                <span className="font-medium">Style:</span> {row.style}
+                              </p>
+                            </div>
+
+                            {/* Registered Date */}
+                            <div>
+                              <p>
+                                <span className="font-medium">Date Registered:</span>{" "}
+                                {new Date(row.createdAt).toLocaleDateString()}
+                              </p>
+                            </div>
+
+                            {/* Services */}
+                            <div>
+                              <p className="font-medium">
+                                Selected Services:
+                              </p>
+                              <div>
+                                <ul className="pl-6 text-black">
+                                  {row.services.map(
+                                    (service: string, index: number) => (
+                                      <li key={index}>{service}</li>
+                                    )
+                                  )}
+                                </ul>
+                              </div>
+                            </div>
+
+                            {/* Notes */}
+                            <div>
+                              <p className="font-medium">Notes:</p>
+                              <div className="pl-4 text-black whitespace-pre-wrap">
+                                {row.notes || "No notes provided."}
+                              </div>
+                            </div>
+
+                            {/* Status Dropdown */}
+                            <div className="flex items-center gap-2">
+                              <p className="font-medium">Status:</p>
+                              <select
+                                className="border border-zinc-500 text-[#71717A] px-2 py-1 rounded w-1/2"
+                                value={row.status}
+                                onChange={(e) =>
+                                  console.log("New Status:", e.target.value)
+                                }
+                              >
+                                <option value="TODO">Todo</option>
+                                <option value="ONGOING">Ongoing</option>
+                                <option value="DONE">Done</option>
+                              </select>
+                            </div>
+
+                            {/* Buttons */}
+                            <div className="flex justify-center gap-4 pt-4">
+                              <Button className="bg-green-600 text-white hover:bg-green-700">
+                                Update
+                              </Button>
+                              <AlertDialogCancel asChild>
+                                <Button variant="outline">Cancel</Button>
+                              </AlertDialogCancel>
+                            </div>
                           </div>
                         </AlertDialogContent>
                       </AlertDialog>
