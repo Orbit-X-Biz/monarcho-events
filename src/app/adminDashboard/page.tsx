@@ -126,7 +126,7 @@ export default function BookingDashboard() {
 
   const startIndex = (currentPage - 1) * rowsPerPage;
   const endIndex = startIndex + rowsPerPage;
-  const paginatedBookings = filteredBookings.slice(startIndex, endIndex);
+  const paginatedBookings = filteredBookings;
 
   const downloadPDF = (row: any) => {
     const doc = new jsPDF();
@@ -463,7 +463,7 @@ export default function BookingDashboard() {
                   <SelectValue placeholder="" />
                 </SelectTrigger>
                 <SelectContent className="bg-white !text-xl" side="top">
-                  {[1, 2, 10, 20, 30, 40, 50].map((pageSize) => (
+                  {[10, 20, 30, 40, 50].map((pageSize) => (
                     <SelectItem
                       className="!text-xl"
                       key={pageSize}
