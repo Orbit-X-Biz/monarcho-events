@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/common/NavBar";
 import Footer from "@/components/common/Footer";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Monarcho Events",
@@ -23,7 +24,7 @@ export default function RootLayout({
         
         {/* Main content with no padding for full-width slider */}
         <main className="min-h-screen">{children}</main>
-        
+        <Toaster position="top-right" richColors />
         <Footer />
       </body>
     </html>
