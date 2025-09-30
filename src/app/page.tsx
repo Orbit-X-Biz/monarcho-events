@@ -68,7 +68,7 @@ export default function Home() {
               }}
             >
               <Link
-                href="/contact-us"
+                href="/booking"
                 className="bg-[#926B48] mt-10 px-6 sm:px-10 py-2 font-semibold text-xs sm:text-sm text-white rounded-md cursor-pointer hover:scale-105 transition-transform"
               >
                 Book Now

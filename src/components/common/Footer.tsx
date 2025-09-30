@@ -153,7 +153,7 @@ export default function Footer() {
           {/* Quick links */}
           <div className="flex flex-col space-y-4 text-center">
             <Link
-              href="/contact-us"
+              href="/booking"
               className="hover:underline cursor-pointer font-normal text-sm"
             >
               Bookings
