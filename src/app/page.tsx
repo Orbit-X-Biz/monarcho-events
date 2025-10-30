@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const sliderImages = ["/assets/slide1.png", "/assets/slide2.JPG"];
+const sliderImages = ["/assets/slide1.png", "/assets/slide2.JPG", "/assets/slide3.jpeg", "/assets/slide4.jpg"];
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
