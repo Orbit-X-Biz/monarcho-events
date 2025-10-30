@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const sliderImages = ["/assets/slide1.png", "/assets/slide2.JPG"];
+const sliderImages = ["/assets/slide1.png", "/assets/slide2.JPG", "/assets/slide3.jpeg", "/assets/slide4.jpg"];
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
@@ -192,7 +192,7 @@ export default function Home() {
             {/* Image */}
             <div className="relative w-full sm:w-2/6 h-[300px] sm:h-auto">
               <Image
-                src="/assets/services-cultural.png"
+                src="/assets/services-cultural.jpg"
                 alt="Life Services"
                 fill
                 style={{ objectFit: "cover" }}
