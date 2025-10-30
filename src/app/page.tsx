@@ -192,7 +192,7 @@ export default function Home() {
             {/* Image */}
             <div className="relative w-full sm:w-2/6 h-[300px] sm:h-auto">
               <Image
-                src="/assets/services-cultural.png"
+                src="/assets/services-cultural.jpg"
                 alt="Life Services"
                 fill
                 style={{ objectFit: "cover" }}
