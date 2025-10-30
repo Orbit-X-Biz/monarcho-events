@@ -129,5 +129,22 @@
             "/assets/id7/26.jpeg",
             "/assets/id7/27.jpeg"
         ]
+    },
+    {
+        "identifier": "id8",
+        "images": [
+            "/assets/id8/1.jpg",
+            "/assets/id8/2.jpg",
+            "/assets/id8/3.jpg",
+            "/assets/id8/4.jpg",
+            "/assets/id8/5.jpg",
+            "/assets/id8/6.jpg",
+            "/assets/id8/7.jpg",
+            "/assets/id8/8.jpg",
+            "/assets/id8/9.jpg",
+            "/assets/id8/10.jpg",
+            "/assets/id8/11.jpg",
+            "/assets/id8/12.jpg"
+        ]
     }
 ]
