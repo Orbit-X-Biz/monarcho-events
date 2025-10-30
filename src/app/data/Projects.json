@@ -173,5 +173,27 @@
             "/assets/id9/21.jpg",
             "/assets/id9/22.jpg"
         ]
+    },
+    {
+        "identifier": "id10",
+        "images": [
+            "/assets/id10/1.jpg",
+            "/assets/id10/2.jpg",
+            "/assets/id10/3.jpg",
+            "/assets/id10/4.jpg",
+            "/assets/id10/5.jpg",
+            "/assets/id10/6.jpg",
+            "/assets/id10/7.jpg",
+            "/assets/id10/8.jpg",
+            "/assets/id10/9.jpg",
+            "/assets/id10/10.jpg",
+            "/assets/id10/11.jpg",
+            "/assets/id10/12.jpg",
+            "/assets/id10/13.jpg",
+            "/assets/id10/14.jpg",
+            "/assets/id10/15.jpg",
+            "/assets/id10/16.jpg",
+            "/assets/id10/17.jpg"
+        ]
     }
 ]
