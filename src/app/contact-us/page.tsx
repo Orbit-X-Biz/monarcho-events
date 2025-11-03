@@ -79,7 +79,7 @@ export default function ContactUs() {
               width={21}
               height={21}
             />
-            <p>+94770028344</p>
+            <p>{STRINGS.whatsappNo}</p>
           </a>
         </div>
 
