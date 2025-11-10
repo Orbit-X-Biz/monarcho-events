@@ -118,9 +118,13 @@ export default function BookingPage() {
       return "Please select an event type";
     }
 
-    if (!scenery) {
-      return "Please select your preferred scenery";
+    if (!dateOfEvent) {
+      return "Please select an event date";
     }
+
+    // if (!scenery) {
+    //   return "Please select your preferred scenery";
+    // }
 
     return null;
   };
@@ -152,7 +156,7 @@ export default function BookingPage() {
       contactNo: contactNo.trim(),
       eventType: eventType,
       dateOfEvent: dateOfEvent?.toISOString() || null,
-      scenery: scenery,
+      scenery: scenery || null,
       noOfGuests: noOfGuests || null,
       style: style || null,
       services: finalServices.length > 0 ? finalServices : null,
@@ -355,7 +359,7 @@ export default function BookingPage() {
                 disabled={loading}
               >
                 <SelectTrigger className="w-full border-[#926B48] !text-[#71717A] text-[10px] sm:text-sm">
-                  <SelectValue placeholder="Preferred Scenery *" />
+                  <SelectValue placeholder="Preferred Scenery" />
                 </SelectTrigger>
                 <SelectContent className="border-[#926B48] !text-[#71717A] bg-white text-[10px] sm:text-sm">
                   {venueTypes.map((venue) => (

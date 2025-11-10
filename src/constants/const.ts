@@ -24,8 +24,10 @@ export const eventTypes = [
   },
   {
     label: "Cultural & Traditional Events",
-    options: [
-      { value: "cultural-show", label: "Cultural Show" },
-    ],
+    options: [{ value: "cultural-show", label: "Cultural Show" }],
+  },
+  {
+    label: "Other events",
+    options: [{ value: "corporate-events", label: "Corporate events" }],
   },
 ];

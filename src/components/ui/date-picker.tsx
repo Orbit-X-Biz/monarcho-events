@@ -47,7 +47,7 @@ export function Calendar28({ date, setDate }: Calendar28Props) {
         <Input
           id="date"
           value={value}
-          placeholder="Tentative Date"
+          placeholder="Tentative Date *"
           className="bg-background pr-10 border-[#926B48] !text-[#71717A] text-[10px]"
           onChange={(e) => {
             const newDate = new Date(e.target.value);
