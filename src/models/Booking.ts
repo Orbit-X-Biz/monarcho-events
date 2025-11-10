@@ -9,8 +9,8 @@ const bookingSchema = new mongoose.Schema(
     eventType: { type: String, required: true }, // Wedding, Birthday etc.
     dateOfEvent: { type: Date, required: true },
 
-    scenery: { type: String, required: true }, // Beachfront, Hilltop etc.
-    noOfGuests: { type: String, required: true }, // e.g. "100 - 250 guests"
+    scenery: { type: String }, // Beachfront, Hilltop etc.
+    noOfGuests: { type: String }, // e.g. "100 - 250 guests"
 
     style: { type: String }, // Boho, Exotic etc.
     services: [{ type: String }], // Array of Additional Services

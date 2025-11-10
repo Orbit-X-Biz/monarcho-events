@@ -394,7 +394,7 @@ export default function BookingDashboard() {
                               <p className="font-medium">Selected Services:</p>
                               <div>
                                 <ul className="pl-6 text-black">
-                                  {row.services.map(
+                                  {(row.services ?? []).map(
                                     (service: string, index: number) => (
                                       <li key={index}>{service}</li>
                                     )
@@ -460,7 +460,11 @@ export default function BookingDashboard() {
                                       setBookings((prev) =>
                                         prev.map((b) =>
                                           b._id === row._id
-                                            ? { ...b, status: selectedStatus ?? b.status }
+                                            ? {
+                                                ...b,
+                                                status:
+                                                  selectedStatus ?? b.status,
+                                              }
                                             : b
                                         )
                                       );
@@ -476,7 +480,7 @@ export default function BookingDashboard() {
                                     );
                                   } finally {
                                     setUpdating(false);
-                                    fetchBookings()
+                                    fetchBookings();
                                   }
                                 }}
                               >

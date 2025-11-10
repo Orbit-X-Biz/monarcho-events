@@ -8,7 +8,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Validation helper function
 function validateBookingData(data: any) {
-  const requiredFields = ["name", "email", "contactNo", "eventType", "scenery"];
+  const requiredFields = ["name", "email", "contactNo", "eventType", "dateOfEvent"];
   const missingFields = [];
   const emptyFields = [];
 
@@ -136,7 +136,7 @@ export default async function handler(
         contactNo: contactNo.trim(),
         eventType: eventType.trim(),
         dateOfEvent,
-        scenery: scenery.trim(),
+        scenery: scenery?.trim(),
         noOfGuests,
         style: style?.trim(),
         services,
